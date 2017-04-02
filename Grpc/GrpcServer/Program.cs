@@ -25,7 +25,13 @@ namespace GrpcServer
 
             Server server = new Server
             {
-                Ports = { new ServerPort("0.0.0.0", Port, sslCredentials) },
+                Ports = {
+                    new ServerPort(
+                        Environment.GetEnvironmentVariable("COMPUTERNAME"),
+                        Port,
+                        sslCredentials
+                    )
+                },
                 Services = { BindService(new EmployeeService()) }
             };
             server.Start();

@@ -20,7 +20,11 @@ namespace GrpcClient
             var key = File.ReadAllText(@"client.key");
             var keypair = new KeyCertificatePair(cert, key);
             SslCredentials creds = new SslCredentials(cacert, keypair);
-            var channel = new Channel("WIN-OHP7F89KNUP", Port, creds);
+            var channel = new Channel(
+                Environment.GetEnvironmentVariable("COMPUTERNAME"),
+                Port,
+                creds
+            );
             var client = new EmployeeServiceClient(channel);
 
             while (true)
