@@ -15,8 +15,6 @@ namespace GrpcClient
         const int Port = 9001;
         public static void Main(string[] args)
         {
-            var option = int.Parse(args[0]);
-
             var cacert = File.ReadAllText(@"ca.crt");
             var cert = File.ReadAllText(@"client.crt");
             var key = File.ReadAllText(@"client.key");
@@ -25,24 +23,42 @@ namespace GrpcClient
             var channel = new Channel("WIN-OHP7F89KNUP", Port, creds);
             var client = new EmployeeServiceClient(channel);
 
-            Console.WriteLine($"Make request number {option}");
-            switch (option)
+            while (true)
             {
-                case 1:
-                    SendMetadataAsync(client).Wait();
+                Console.WriteLine("What do you want to do?");
+                Console.WriteLine("1. SendMetadataAsync()");
+                Console.WriteLine("2. GetByBadgeNumber()");
+                Console.WriteLine("3. GetAll()");
+                Console.WriteLine("4. AddPhoto()");
+                Console.WriteLine("5. SaveAll()");
+                Console.WriteLine("6. EXIT");
+                var option = int.Parse(Console.ReadLine());
+                if (option == 6)
+                {
                     break;
-                case 2:
-                    GetByBadgeNumber(client).Wait();
-                    break;
-                case 3:
-                    GetAll(client).Wait();
-                    break;
-                case 4:
-                    AddPhoto(client).Wait();
-                    break;
-                case 5:
-                    SaveAll(client).Wait();
-                    break;
+                }
+                Console.WriteLine($"Start task {option}...");
+                switch (option)
+                {
+                    case 1:
+                        SendMetadataAsync(client).Wait();
+                        break;
+                    case 2:
+                        GetByBadgeNumber(client).Wait();
+                        break;
+                    case 3:
+                        GetAll(client).Wait();
+                        break;
+                    case 4:
+                        AddPhoto(client).Wait();
+                        break;
+                    case 5:
+                        SaveAll(client).Wait();
+                        break;
+                }
+                Console.WriteLine($"Finished task {option}...");
+                Console.WriteLine();
+                Console.WriteLine();
             }
         }
 
@@ -70,7 +86,7 @@ namespace GrpcClient
 
         public static async Task GetAll(EmployeeServiceClient client)
         {
-            using (var call = client.GetAll(new Messages.GetAllRequest()))
+            using (var call = client.GetAll(new GetAllRequest()))
             {
                 var responseStream = call.ResponseStream;
                 while (await responseStream.MoveNext())
@@ -83,6 +99,8 @@ namespace GrpcClient
         public static async Task AddPhoto(EmployeeServiceClient client)
         {
             Metadata md = new Metadata();
+            // if the badgenumber is included in the AddPhotoRequest
+            // the number will be sent several times, so put this in metatdata instead
             md.Add("badgenumber", "2080");
 
             FileStream fs = File.OpenRead("Penguins.jpg");

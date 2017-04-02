@@ -14,3 +14,4 @@ C:\Users\Administrator\Documents\GitHub\grpc-csharp\Grpc\Messages\bin\Debug\Grpc
 C:\Users\Administrator\Documents\GitHub\grpc-csharp\Grpc\Messages\bin\Debug\System.Interactive.Async.xml
 C:\Users\Administrator\Documents\GitHub\grpc-csharp\Grpc\Messages\obj\Debug\Messagse.dll
 C:\Users\Administrator\Documents\GitHub\grpc-csharp\Grpc\Messages\obj\Debug\Messagse.pdb
+C:\Users\Administrator\Documents\GitHub\grpc-csharp\Grpc\Messages\obj\Debug\Messages.csprojResolveAssemblyReference.cache

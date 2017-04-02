@@ -42,9 +42,12 @@ namespace GrpcServer
             public override async Task<EmployeeResponse> GetByBadgeNumber(GetByBadgeNumberRequest request, ServerCallContext context)
             {
                 Metadata md = context.RequestHeaders;
-                foreach (var entry in md)
+                if (md != null)
                 {
-                    Console.WriteLine($"{entry.Key}: {entry.Value}");
+                    foreach (var entry in md)
+                    {
+                        Console.WriteLine($"{entry.Key}: {entry.Value}");
+                    }
                 }
 
                 foreach (var e in Employees.employees)
