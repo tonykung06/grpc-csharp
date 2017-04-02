@@ -21,11 +21,11 @@ namespace GrpcServer
             var sslCredentials = new SslServerCredentials(new List<KeyCertificatePair>()
             {
                 keypair
-            }, cacert, false);
+            }, cacert, true);
 
             Server server = new Server
             {
-                Ports = { new ServerPort("127.0.0.1", Port, SslServerCredentials.Insecure) },
+                Ports = { new ServerPort("0.0.0.0", Port, sslCredentials) },
                 Services = { BindService(new EmployeeService()) }
             };
             server.Start();

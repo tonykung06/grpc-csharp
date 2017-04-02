@@ -5,50 +5,50 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using grpc = global::Grpc.Core;
+using Grpc.Core;
 
 namespace Messages {
-  public static partial class EmployeeService
+  public static class EmployeeService
   {
     static readonly string __ServiceName = "EmployeeService";
 
-    static readonly grpc::Marshaller<global::Messages.GetByBadgeNumberRequest> __Marshaller_GetByBadgeNumberRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.GetByBadgeNumberRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Messages.EmployeeResponse> __Marshaller_EmployeeResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.EmployeeResponse.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Messages.GetAllRequest> __Marshaller_GetAllRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.GetAllRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Messages.EmployeeRequest> __Marshaller_EmployeeRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.EmployeeRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Messages.AddPhotoRequest> __Marshaller_AddPhotoRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.AddPhotoRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Messages.AddPhotoResponse> __Marshaller_AddPhotoResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.AddPhotoResponse.Parser.ParseFrom);
+    static readonly Marshaller<global::Messages.GetByBadgeNumberRequest> __Marshaller_GetByBadgeNumberRequest = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.GetByBadgeNumberRequest.Parser.ParseFrom);
+    static readonly Marshaller<global::Messages.EmployeeResponse> __Marshaller_EmployeeResponse = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.EmployeeResponse.Parser.ParseFrom);
+    static readonly Marshaller<global::Messages.GetAllRequest> __Marshaller_GetAllRequest = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.GetAllRequest.Parser.ParseFrom);
+    static readonly Marshaller<global::Messages.EmployeeRequest> __Marshaller_EmployeeRequest = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.EmployeeRequest.Parser.ParseFrom);
+    static readonly Marshaller<global::Messages.AddPhotoRequest> __Marshaller_AddPhotoRequest = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.AddPhotoRequest.Parser.ParseFrom);
+    static readonly Marshaller<global::Messages.AddPhotoResponse> __Marshaller_AddPhotoResponse = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Messages.AddPhotoResponse.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::Messages.GetByBadgeNumberRequest, global::Messages.EmployeeResponse> __Method_GetByBadgeNumber = new grpc::Method<global::Messages.GetByBadgeNumberRequest, global::Messages.EmployeeResponse>(
-        grpc::MethodType.Unary,
+    static readonly Method<global::Messages.GetByBadgeNumberRequest, global::Messages.EmployeeResponse> __Method_GetByBadgeNumber = new Method<global::Messages.GetByBadgeNumberRequest, global::Messages.EmployeeResponse>(
+        MethodType.Unary,
         __ServiceName,
         "GetByBadgeNumber",
         __Marshaller_GetByBadgeNumberRequest,
         __Marshaller_EmployeeResponse);
 
-    static readonly grpc::Method<global::Messages.GetAllRequest, global::Messages.EmployeeResponse> __Method_GetAll = new grpc::Method<global::Messages.GetAllRequest, global::Messages.EmployeeResponse>(
-        grpc::MethodType.ServerStreaming,
+    static readonly Method<global::Messages.GetAllRequest, global::Messages.EmployeeResponse> __Method_GetAll = new Method<global::Messages.GetAllRequest, global::Messages.EmployeeResponse>(
+        MethodType.ServerStreaming,
         __ServiceName,
         "GetAll",
         __Marshaller_GetAllRequest,
         __Marshaller_EmployeeResponse);
 
-    static readonly grpc::Method<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse> __Method_Save = new grpc::Method<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse>(
-        grpc::MethodType.Unary,
+    static readonly Method<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse> __Method_Save = new Method<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse>(
+        MethodType.Unary,
         __ServiceName,
         "Save",
         __Marshaller_EmployeeRequest,
         __Marshaller_EmployeeResponse);
 
-    static readonly grpc::Method<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse> __Method_SaveAll = new grpc::Method<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse>(
-        grpc::MethodType.DuplexStreaming,
+    static readonly Method<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse> __Method_SaveAll = new Method<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse>(
+        MethodType.DuplexStreaming,
         __ServiceName,
         "SaveAll",
         __Marshaller_EmployeeRequest,
         __Marshaller_EmployeeResponse);
 
-    static readonly grpc::Method<global::Messages.AddPhotoRequest, global::Messages.AddPhotoResponse> __Method_AddPhoto = new grpc::Method<global::Messages.AddPhotoRequest, global::Messages.AddPhotoResponse>(
-        grpc::MethodType.ClientStreaming,
+    static readonly Method<global::Messages.AddPhotoRequest, global::Messages.AddPhotoResponse> __Method_AddPhoto = new Method<global::Messages.AddPhotoRequest, global::Messages.AddPhotoResponse>(
+        MethodType.ClientStreaming,
         __ServiceName,
         "AddPhoto",
         __Marshaller_AddPhotoRequest,
@@ -61,46 +61,46 @@ namespace Messages {
     }
 
     /// <summary>Base class for server-side implementations of EmployeeService</summary>
-    public abstract partial class EmployeeServiceBase
+    public abstract class EmployeeServiceBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::Messages.EmployeeResponse> GetByBadgeNumber(global::Messages.GetByBadgeNumberRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Messages.EmployeeResponse> GetByBadgeNumber(global::Messages.GetByBadgeNumberRequest request, ServerCallContext context)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        throw new RpcException(new Status(StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task GetAll(global::Messages.GetAllRequest request, grpc::IServerStreamWriter<global::Messages.EmployeeResponse> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task GetAll(global::Messages.GetAllRequest request, IServerStreamWriter<global::Messages.EmployeeResponse> responseStream, ServerCallContext context)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        throw new RpcException(new Status(StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Messages.EmployeeResponse> Save(global::Messages.EmployeeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Messages.EmployeeResponse> Save(global::Messages.EmployeeRequest request, ServerCallContext context)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        throw new RpcException(new Status(StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task SaveAll(grpc::IAsyncStreamReader<global::Messages.EmployeeRequest> requestStream, grpc::IServerStreamWriter<global::Messages.EmployeeResponse> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task SaveAll(IAsyncStreamReader<global::Messages.EmployeeRequest> requestStream, IServerStreamWriter<global::Messages.EmployeeResponse> responseStream, ServerCallContext context)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        throw new RpcException(new Status(StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Messages.AddPhotoResponse> AddPhoto(grpc::IAsyncStreamReader<global::Messages.AddPhotoRequest> requestStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Messages.AddPhotoResponse> AddPhoto(IAsyncStreamReader<global::Messages.AddPhotoRequest> requestStream, ServerCallContext context)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        throw new RpcException(new Status(StatusCode.Unimplemented, ""));
       }
 
     }
 
     /// <summary>Client for EmployeeService</summary>
-    public partial class EmployeeServiceClient : grpc::ClientBase<EmployeeServiceClient>
+    public class EmployeeServiceClient : ClientBase<EmployeeServiceClient>
     {
       /// <summary>Creates a new client for EmployeeService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
-      public EmployeeServiceClient(grpc::Channel channel) : base(channel)
+      public EmployeeServiceClient(Channel channel) : base(channel)
       {
       }
       /// <summary>Creates a new client for EmployeeService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-      public EmployeeServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public EmployeeServiceClient(CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
@@ -113,63 +113,62 @@ namespace Messages {
       {
       }
 
-      public virtual global::Messages.EmployeeResponse GetByBadgeNumber(global::Messages.GetByBadgeNumberRequest request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual global::Messages.EmployeeResponse GetByBadgeNumber(global::Messages.GetByBadgeNumberRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return GetByBadgeNumber(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetByBadgeNumber(request, new CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Messages.EmployeeResponse GetByBadgeNumber(global::Messages.GetByBadgeNumberRequest request, grpc::CallOptions options)
+      public virtual global::Messages.EmployeeResponse GetByBadgeNumber(global::Messages.GetByBadgeNumberRequest request, CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetByBadgeNumber, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Messages.EmployeeResponse> GetByBadgeNumberAsync(global::Messages.GetByBadgeNumberRequest request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual AsyncUnaryCall<global::Messages.EmployeeResponse> GetByBadgeNumberAsync(global::Messages.GetByBadgeNumberRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return GetByBadgeNumberAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetByBadgeNumberAsync(request, new CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Messages.EmployeeResponse> GetByBadgeNumberAsync(global::Messages.GetByBadgeNumberRequest request, grpc::CallOptions options)
+      public virtual AsyncUnaryCall<global::Messages.EmployeeResponse> GetByBadgeNumberAsync(global::Messages.GetByBadgeNumberRequest request, CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetByBadgeNumber, null, options, request);
       }
-      public virtual grpc::AsyncServerStreamingCall<global::Messages.EmployeeResponse> GetAll(global::Messages.GetAllRequest request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual AsyncServerStreamingCall<global::Messages.EmployeeResponse> GetAll(global::Messages.GetAllRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return GetAll(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetAll(request, new CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncServerStreamingCall<global::Messages.EmployeeResponse> GetAll(global::Messages.GetAllRequest request, grpc::CallOptions options)
+      public virtual AsyncServerStreamingCall<global::Messages.EmployeeResponse> GetAll(global::Messages.GetAllRequest request, CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_GetAll, null, options, request);
       }
-      public virtual global::Messages.EmployeeResponse Save(global::Messages.EmployeeRequest request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual global::Messages.EmployeeResponse Save(global::Messages.EmployeeRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return Save(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return Save(request, new CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Messages.EmployeeResponse Save(global::Messages.EmployeeRequest request, grpc::CallOptions options)
+      public virtual global::Messages.EmployeeResponse Save(global::Messages.EmployeeRequest request, CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_Save, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Messages.EmployeeResponse> SaveAsync(global::Messages.EmployeeRequest request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual AsyncUnaryCall<global::Messages.EmployeeResponse> SaveAsync(global::Messages.EmployeeRequest request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return SaveAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return SaveAsync(request, new CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Messages.EmployeeResponse> SaveAsync(global::Messages.EmployeeRequest request, grpc::CallOptions options)
+      public virtual AsyncUnaryCall<global::Messages.EmployeeResponse> SaveAsync(global::Messages.EmployeeRequest request, CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_Save, null, options, request);
       }
-      public virtual grpc::AsyncDuplexStreamingCall<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse> SaveAll(grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual AsyncDuplexStreamingCall<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse> SaveAll(Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return SaveAll(new grpc::CallOptions(headers, deadline, cancellationToken));
+        return SaveAll(new CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncDuplexStreamingCall<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse> SaveAll(grpc::CallOptions options)
+      public virtual AsyncDuplexStreamingCall<global::Messages.EmployeeRequest, global::Messages.EmployeeResponse> SaveAll(CallOptions options)
       {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_SaveAll, null, options);
       }
-      public virtual grpc::AsyncClientStreamingCall<global::Messages.AddPhotoRequest, global::Messages.AddPhotoResponse> AddPhoto(grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual AsyncClientStreamingCall<global::Messages.AddPhotoRequest, global::Messages.AddPhotoResponse> AddPhoto(Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return AddPhoto(new grpc::CallOptions(headers, deadline, cancellationToken));
+        return AddPhoto(new CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncClientStreamingCall<global::Messages.AddPhotoRequest, global::Messages.AddPhotoResponse> AddPhoto(grpc::CallOptions options)
+      public virtual AsyncClientStreamingCall<global::Messages.AddPhotoRequest, global::Messages.AddPhotoResponse> AddPhoto(CallOptions options)
       {
         return CallInvoker.AsyncClientStreamingCall(__Method_AddPhoto, null, options);
       }
-      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override EmployeeServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
         return new EmployeeServiceClient(configuration);
@@ -177,10 +176,9 @@ namespace Messages {
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
-    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static grpc::ServerServiceDefinition BindService(EmployeeServiceBase serviceImpl)
+    public static ServerServiceDefinition BindService(EmployeeServiceBase serviceImpl)
     {
-      return grpc::ServerServiceDefinition.CreateBuilder()
+      return ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_GetByBadgeNumber, serviceImpl.GetByBadgeNumber)
           .AddMethod(__Method_GetAll, serviceImpl.GetAll)
           .AddMethod(__Method_Save, serviceImpl.Save)

@@ -12,7 +12,7 @@ echo Generate server key:
 openssl genrsa -passout pass:1111 -des3 -out server.key 4096
 
 echo Generate server signing request:
-openssl req -passin pass:1111 -new -key server.key -out server.csr -subj  "/C=US/ST=CA/L=Cupertino/O=YourCompany/OU=YourApp/CN=server-%COMPUTERNAME%"
+openssl req -passin pass:1111 -new -key server.key -out server.csr -subj  "/C=US/ST=CA/L=Cupertino/O=YourCompany/OU=YourApp/CN=%COMPUTERNAME%"
 
 echo Self-sign server certificate:
 openssl x509 -req -passin pass:1111 -days 365 -in server.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out server.crt

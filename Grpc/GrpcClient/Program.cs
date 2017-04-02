@@ -22,7 +22,7 @@ namespace GrpcClient
             var key = File.ReadAllText(@"client.key");
             var keypair = new KeyCertificatePair(cert, key);
             SslCredentials creds = new SslCredentials(cacert, keypair);
-            var channel = new Channel("127.0.0.1", Port, ChannelCredentials.Insecure);
+            var channel = new Channel("WIN-OHP7F89KNUP", Port, creds);
             var client = new EmployeeServiceClient(channel);
 
             Console.WriteLine($"Make request number {option}");
@@ -53,7 +53,7 @@ namespace GrpcClient
             md.Add("password", "password1");
             try
             {
-                var response = await client.GetByBadgeNumberAsync(new GetByBadgeNumberRequest(), md);
+                var response = await client.GetByBadgeNumberAsync(new GetByBadgeNumberRequest() { BadgeNumber = 2080 }, md);
                 Console.WriteLine($"{response.Employee.FirstName} {response.Employee.LastName}");
             }
             catch (Exception e)
@@ -64,7 +64,7 @@ namespace GrpcClient
         }
         public static async Task GetByBadgeNumber(EmployeeServiceClient client)
         {
-            var res = await client.GetByBadgeNumberAsync(new Messages.GetByBadgeNumberRequest() { BadgeNumber = 2080 });
+            var res = await client.GetByBadgeNumberAsync(new GetByBadgeNumberRequest() { BadgeNumber = 2080 });
             Console.WriteLine(res.Employee);
         }
 

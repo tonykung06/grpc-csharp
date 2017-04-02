@@ -1526,6 +1526,12 @@
             <param name="message">The message to format for diagnostic purposes.</param>
             <returns>The diagnostic-only JSON representation of the message</returns>
         </member>
+        <member name="M:Google.Protobuf.JsonFormatter.ToCamelCaseForFieldMask(System.String)">
+            <summary>
+            Camel-case converter with added strictness for field mask formatting.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">The field mask is invalid for JSON representation</exception>
+        </member>
         <member name="M:Google.Protobuf.JsonFormatter.WriteValue(System.IO.TextWriter,System.Object)">
             <summary>
             Writes a single value to the given writer as JSON. Only types understood by
@@ -2743,8 +2749,8 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.FileDescriptorSet">
             <summary>
-            The protocol compiler can output a FileDescriptorSet containing the .proto
-            files it parses.
+             The protocol compiler can output a FileDescriptorSet containing the .proto
+             files it parses.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileDescriptorSet.FileFieldNumber">
@@ -2752,7 +2758,7 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.FileDescriptorProto">
             <summary>
-            Describes a complete .proto file.
+             Describes a complete .proto file.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileDescriptorProto.NameFieldNumber">
@@ -2760,7 +2766,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileDescriptorProto.Name">
             <summary>
-            file name, relative to root of source tree
+             file name, relative to root of source tree
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileDescriptorProto.PackageFieldNumber">
@@ -2768,7 +2774,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileDescriptorProto.Package">
             <summary>
-            e.g. "foo", "foo.bar", etc.
+             e.g. "foo", "foo.bar", etc.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileDescriptorProto.DependencyFieldNumber">
@@ -2776,7 +2782,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileDescriptorProto.Dependency">
             <summary>
-            Names of files imported by this file.
+             Names of files imported by this file.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileDescriptorProto.PublicDependencyFieldNumber">
@@ -2784,7 +2790,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileDescriptorProto.PublicDependency">
             <summary>
-            Indexes of the public imported files in the dependency list above.
+             Indexes of the public imported files in the dependency list above.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileDescriptorProto.WeakDependencyFieldNumber">
@@ -2792,8 +2798,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileDescriptorProto.WeakDependency">
             <summary>
-            Indexes of the weak imported files in the dependency list.
-            For Google-internal migration only. Do not use.
+             Indexes of the weak imported files in the dependency list.
+             For Google-internal migration only. Do not use.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileDescriptorProto.MessageTypeFieldNumber">
@@ -2801,7 +2807,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileDescriptorProto.MessageType">
             <summary>
-            All top-level definitions in this file.
+             All top-level definitions in this file.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileDescriptorProto.EnumTypeFieldNumber">
@@ -2821,10 +2827,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileDescriptorProto.SourceCodeInfo">
             <summary>
-            This field contains optional information about the original source code.
-            You may safely remove this entire field without harming runtime
-            functionality of the descriptors -- the information is needed only by
-            development tools.
+             This field contains optional information about the original source code.
+             You may safely remove this entire field without harming runtime
+             functionality of the descriptors -- the information is needed only by
+             development tools.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileDescriptorProto.SyntaxFieldNumber">
@@ -2832,13 +2838,13 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileDescriptorProto.Syntax">
             <summary>
-            The syntax of the proto file.
-            The supported values are "proto2" and "proto3".
+             The syntax of the proto file.
+             The supported values are "proto2" and "proto3".
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.DescriptorProto">
             <summary>
-            Describes a message type.
+             Describes a message type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.DescriptorProto.NameFieldNumber">
@@ -2873,8 +2879,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.DescriptorProto.ReservedName">
             <summary>
-            Reserved field names, which may not be used by fields in the same message.
-            A given name may only be reserved once.
+             Reserved field names, which may not be used by fields in the same message.
+             A given name may only be reserved once.
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.DescriptorProto.Types">
@@ -2888,9 +2894,9 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange">
             <summary>
-            Range of reserved tag numbers. Reserved tag numbers may not be used by
-            fields or extension ranges in the same message. Reserved ranges may
-            not overlap.
+             Range of reserved tag numbers. Reserved tag numbers may not be used by
+             fields or extension ranges in the same message. Reserved ranges may
+             not overlap.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange.StartFieldNumber">
@@ -2898,7 +2904,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange.Start">
             <summary>
-            Inclusive.
+             Inclusive.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange.EndFieldNumber">
@@ -2906,12 +2912,12 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange.End">
             <summary>
-            Exclusive.
+             Exclusive.
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.FieldDescriptorProto">
             <summary>
-            Describes a field within a message.
+             Describes a field within a message.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.NameFieldNumber">
@@ -2928,8 +2934,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldDescriptorProto.Type">
             <summary>
-            If type_name is set, this need not be set.  If both this and type_name
-            are set, this must be one of TYPE_ENUM, TYPE_MESSAGE or TYPE_GROUP.
+             If type_name is set, this need not be set.  If both this and type_name
+             are set, this must be one of TYPE_ENUM, TYPE_MESSAGE or TYPE_GROUP.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.TypeNameFieldNumber">
@@ -2937,11 +2943,11 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldDescriptorProto.TypeName">
             <summary>
-            For message and enum types, this is the name of the type.  If the name
-            starts with a '.', it is fully-qualified.  Otherwise, C++-like scoping
-            rules are used to find the type (i.e. first the nested types within this
-            message are searched, then within the parent, on up to the root
-            namespace).
+             For message and enum types, this is the name of the type.  If the name
+             starts with a '.', it is fully-qualified.  Otherwise, C++-like scoping
+             rules are used to find the type (i.e. first the nested types within this
+             message are searched, then within the parent, on up to the root
+             namespace).
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.ExtendeeFieldNumber">
@@ -2949,8 +2955,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldDescriptorProto.Extendee">
             <summary>
-            For extensions, this is the name of the type being extended.  It is
-            resolved in the same manner as type_name.
+             For extensions, this is the name of the type being extended.  It is
+             resolved in the same manner as type_name.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.DefaultValueFieldNumber">
@@ -2958,11 +2964,11 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldDescriptorProto.DefaultValue">
             <summary>
-            For numeric types, contains the original text representation of the value.
-            For booleans, "true" or "false".
-            For strings, contains the default text contents (not escaped in any way).
-            For bytes, contains the C escaped value.  All bytes >= 128 are escaped.
-            TODO(kenton):  Base-64 encode?
+             For numeric types, contains the original text representation of the value.
+             For booleans, "true" or "false".
+             For strings, contains the default text contents (not escaped in any way).
+             For bytes, contains the C escaped value.  All bytes >= 128 are escaped.
+             TODO(kenton):  Base-64 encode?
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.OneofIndexFieldNumber">
@@ -2970,8 +2976,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldDescriptorProto.OneofIndex">
             <summary>
-            If set, gives the index of a oneof in the containing type's oneof_decl
-            list.  This field is a member of that oneof.
+             If set, gives the index of a oneof in the containing type's oneof_decl
+             list.  This field is a member of that oneof.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.JsonNameFieldNumber">
@@ -2979,10 +2985,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldDescriptorProto.JsonName">
             <summary>
-            JSON name of this field. The value is set by protocol compiler. If the
-            user has set a "json_name" option on this field, that option's value
-            will be used. Otherwise, it's deduced from the field's name by converting
-            it to camelCase.
+             JSON name of this field. The value is set by protocol compiler. If the
+             user has set a "json_name" option on this field, that option's value
+             will be used. Otherwise, it's deduced from the field's name by converting
+             it to camelCase.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.OptionsFieldNumber">
@@ -2993,58 +2999,60 @@
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Double">
             <summary>
-            0 is reserved for errors.
-            Order is weird for historical reasons.
+             0 is reserved for errors.
+             Order is weird for historical reasons.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Int64">
             <summary>
-            Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT64 if
-            negative values are likely.
+             Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT64 if
+             negative values are likely.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Int32">
             <summary>
-            Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT32 if
-            negative values are likely.
+             Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT32 if
+             negative values are likely.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Group">
             <summary>
-            Tag-delimited aggregate.
-            Group type is deprecated and not supported in proto3. However, Proto3
-            implementations should still be able to parse the group wire format and
-            treat group fields as unknown fields.
+             Tag-delimited aggregate.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Message">
             <summary>
-            Length-delimited aggregate.
+             Length-delimited aggregate.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Bytes">
             <summary>
-            New in version 2.
+             New in version 2.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Sint32">
             <summary>
-            Uses ZigZag encoding.
+             Uses ZigZag encoding.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Sint64">
             <summary>
-            Uses ZigZag encoding.
+             Uses ZigZag encoding.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label.Optional">
             <summary>
-            0 is reserved for errors
+             0 is reserved for errors
+            </summary>
+        </member>
+        <member name="F:Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label.Repeated">
+            <summary>
+             TODO(sanjay): Should we add LABEL_MAP?
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.OneofDescriptorProto">
             <summary>
-            Describes a oneof.
+             Describes a oneof.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.OneofDescriptorProto.NameFieldNumber">
@@ -3055,7 +3063,7 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.EnumDescriptorProto">
             <summary>
-            Describes an enum type.
+             Describes an enum type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.EnumDescriptorProto.NameFieldNumber">
@@ -3069,7 +3077,7 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.EnumValueDescriptorProto">
             <summary>
-            Describes a value within an enum.
+             Describes a value within an enum.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.EnumValueDescriptorProto.NameFieldNumber">
@@ -3083,7 +3091,7 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.ServiceDescriptorProto">
             <summary>
-            Describes a service.
+             Describes a service.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.ServiceDescriptorProto.NameFieldNumber">
@@ -3097,7 +3105,7 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.MethodDescriptorProto">
             <summary>
-            Describes a method of a service.
+             Describes a method of a service.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MethodDescriptorProto.NameFieldNumber">
@@ -3108,8 +3116,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MethodDescriptorProto.InputType">
             <summary>
-            Input and output type names.  These are resolved in the same way as
-            FieldDescriptorProto.type_name, but must refer to a message type.
+             Input and output type names.  These are resolved in the same way as
+             FieldDescriptorProto.type_name, but must refer to a message type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MethodDescriptorProto.OutputTypeFieldNumber">
@@ -3123,7 +3131,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MethodDescriptorProto.ClientStreaming">
             <summary>
-            Identifies if client streams multiple client messages
+             Identifies if client streams multiple client messages
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MethodDescriptorProto.ServerStreamingFieldNumber">
@@ -3131,7 +3139,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MethodDescriptorProto.ServerStreaming">
             <summary>
-            Identifies if server streams multiple server messages
+             Identifies if server streams multiple server messages
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.JavaPackageFieldNumber">
@@ -3139,10 +3147,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.JavaPackage">
             <summary>
-            Sets the Java package where classes generated from this .proto will be
-            placed.  By default, the proto package is used, but this is often
-            inappropriate because proto packages do not normally start with backwards
-            domain names.
+             Sets the Java package where classes generated from this .proto will be
+             placed.  By default, the proto package is used, but this is often
+             inappropriate because proto packages do not normally start with backwards
+             domain names.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.JavaOuterClassnameFieldNumber">
@@ -3150,11 +3158,11 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.JavaOuterClassname">
             <summary>
-            If set, all the classes from the .proto file are wrapped in a single
-            outer class with the given name.  This applies to both Proto1
-            (equivalent to the old "--one_java_file" option) and Proto2 (where
-            a .proto always translates to a single class, but you may want to
-            explicitly choose the class name).
+             If set, all the classes from the .proto file are wrapped in a single
+             outer class with the given name.  This applies to both Proto1
+             (equivalent to the old "--one_java_file" option) and Proto2 (where
+             a .proto always translates to a single class, but you may want to
+             explicitly choose the class name).
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.JavaMultipleFilesFieldNumber">
@@ -3162,12 +3170,12 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.JavaMultipleFiles">
             <summary>
-            If set true, then the Java code generator will generate a separate .java
-            file for each top-level message, enum, and service defined in the .proto
-            file.  Thus, these types will *not* be nested inside the outer class
-            named by java_outer_classname.  However, the outer class will still be
-            generated to contain the file's getDescriptor() method as well as any
-            top-level extensions defined in the file.
+             If set true, then the Java code generator will generate a separate .java
+             file for each top-level message, enum, and service defined in the .proto
+             file.  Thus, these types will *not* be nested inside the outer class
+             named by java_outer_classname.  However, the outer class will still be
+             generated to contain the file's getDescriptor() method as well as any
+             top-level extensions defined in the file.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.JavaGenerateEqualsAndHashFieldNumber">
@@ -3175,7 +3183,18 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.JavaGenerateEqualsAndHash">
             <summary>
-            This option does nothing.
+             If set true, then the Java code generator will generate equals() and
+             hashCode() methods for all messages defined in the .proto file.
+             This increases generated code size, potentially substantially for large
+             protos, which may harm a memory-constrained application.
+             - In the full runtime this is a speed optimization, as the
+             AbstractMessage base class includes reflection-based implementations of
+             these methods.
+             - In the lite runtime, setting this option changes the semantics of
+             equals() and hashCode() to more closely match those of the full runtime;
+             the generated methods compute their results based on field values rather
+             than object identity. (Implementations should not assume that hashcodes
+             will be consistent across runtimes or versions of the protocol compiler.)
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.JavaStringCheckUtf8FieldNumber">
@@ -3183,12 +3202,12 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.JavaStringCheckUtf8">
             <summary>
-            If set true, then the Java2 code generator will generate code that
-            throws an exception whenever an attempt is made to assign a non-UTF-8
-            byte sequence to a string field.
-            Message reflection will do the same.
-            However, an extension field still accepts non-UTF-8 byte sequences.
-            This option has no effect on when used with the lite runtime.
+             If set true, then the Java2 code generator will generate code that
+             throws an exception whenever an attempt is made to assign a non-UTF-8
+             byte sequence to a string field.
+             Message reflection will do the same.
+             However, an extension field still accepts non-UTF-8 byte sequences.
+             This option has no effect on when used with the lite runtime.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.OptimizeForFieldNumber">
@@ -3199,11 +3218,11 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.GoPackage">
             <summary>
-            Sets the Go package where structs generated from this .proto will be
-            placed. If omitted, the Go package will be derived from the following:
-              - The basename of the package import path, if provided.
-              - Otherwise, the package statement in the .proto file, if present.
-              - Otherwise, the basename of the .proto file, without extension.
+             Sets the Go package where structs generated from this .proto will be
+             placed. If omitted, the Go package will be derived from the following:
+               - The basename of the package import path, if provided.
+               - Otherwise, the package statement in the .proto file, if present.
+               - Otherwise, the basename of the .proto file, without extension.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.CcGenericServicesFieldNumber">
@@ -3211,16 +3230,16 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.CcGenericServices">
              <summary>
-             Should generic services be generated in each language?  "Generic" services
-             are not specific to any particular RPC system.  They are generated by the
-             main code generators in each language (without additional plugins).
-             Generic services were the only kind of service generation supported by
-             early versions of google.protobuf.
+              Should generic services be generated in each language?  "Generic" services
+              are not specific to any particular RPC system.  They are generated by the
+              main code generators in each language (without additional plugins).
+              Generic services were the only kind of service generation supported by
+              early versions of google.protobuf.
             
-             Generic services are now considered deprecated in favor of using plugins
-             that generate code specific to your particular RPC system.  Therefore,
-             these default to false.  Old code which depends on generic services should
-             explicitly set them to true.
+              Generic services are now considered deprecated in favor of using plugins
+              that generate code specific to your particular RPC system.  Therefore,
+              these default to false.  Old code which depends on generic services should
+              explicitly set them to true.
              </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.JavaGenericServicesFieldNumber">
@@ -3234,10 +3253,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.Deprecated">
             <summary>
-            Is this file deprecated?
-            Depending on the target platform, this can emit Deprecated annotations
-            for everything in the file, or it will be completely ignored; in the very
-            least, this is a formalization for deprecating files.
+             Is this file deprecated?
+             Depending on the target platform, this can emit Deprecated annotations
+             for everything in the file, or it will be completely ignored; in the very
+             least, this is a formalization for deprecating files.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.CcEnableArenasFieldNumber">
@@ -3245,8 +3264,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.CcEnableArenas">
             <summary>
-            Enables the use of arenas for the proto messages in this file. This applies
-            only to generated classes for C++.
+             Enables the use of arenas for the proto messages in this file. This applies
+             only to generated classes for C++.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.ObjcClassPrefixFieldNumber">
@@ -3254,8 +3273,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.ObjcClassPrefix">
             <summary>
-            Sets the objective c class prefix which is prepended to all objective c
-            generated classes from this .proto. There is no default.
+             Sets the objective c class prefix which is prepended to all objective c
+             generated classes from this .proto. There is no default.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.CsharpNamespaceFieldNumber">
@@ -3263,18 +3282,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.CsharpNamespace">
             <summary>
-            Namespace for generated classes; defaults to the package.
-            </summary>
-        </member>
-        <member name="F:Google.Protobuf.Reflection.FileOptions.SwiftPrefixFieldNumber">
-            <summary>Field number for the "swift_prefix" field.</summary>
-        </member>
-        <member name="P:Google.Protobuf.Reflection.FileOptions.SwiftPrefix">
-            <summary>
-            By default Swift generators will take the proto package and CamelCase it
-            replacing '.' with underscore and use that to prefix the types/symbols
-            defined. When this options is provided, they will use this value instead
-            to prefix the types/symbols defined.
+             Namespace for generated classes; defaults to the package.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.UninterpretedOptionFieldNumber">
@@ -3282,7 +3290,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FileOptions.UninterpretedOption">
             <summary>
-            The parser stores options it doesn't recognize here. See above.
+             The parser stores options it doesn't recognize here. See above.
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.FileOptions.Types">
@@ -3290,22 +3298,22 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode">
             <summary>
-            Generated classes can be optimized for speed or code size.
+             Generated classes can be optimized for speed or code size.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode.Speed">
             <summary>
-            Generate complete code for parsing, serialization,
+             Generate complete code for parsing, serialization,
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode.CodeSize">
             <summary>
-            etc.
+             etc.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode.LiteRuntime">
             <summary>
-            Generate code using MessageLite and the lite runtime.
+             Generate code using MessageLite and the lite runtime.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MessageOptions.MessageSetWireFormatFieldNumber">
@@ -3313,24 +3321,24 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MessageOptions.MessageSetWireFormat">
              <summary>
-             Set true to use the old proto1 MessageSet wire format for extensions.
-             This is provided for backwards-compatibility with the MessageSet wire
-             format.  You should not use this for any other reason:  It's less
-             efficient, has fewer features, and is more complicated.
+              Set true to use the old proto1 MessageSet wire format for extensions.
+              This is provided for backwards-compatibility with the MessageSet wire
+              format.  You should not use this for any other reason:  It's less
+              efficient, has fewer features, and is more complicated.
             
-             The message must be defined exactly as follows:
-               message Foo {
-                 option message_set_wire_format = true;
-                 extensions 4 to max;
-               }
-             Note that the message cannot have any defined fields; MessageSets only
-             have extensions.
+              The message must be defined exactly as follows:
+                message Foo {
+                  option message_set_wire_format = true;
+                  extensions 4 to max;
+                }
+              Note that the message cannot have any defined fields; MessageSets only
+              have extensions.
             
-             All extensions of your type must be singular messages; e.g. they cannot
-             be int32s, enums, or repeated messages.
+              All extensions of your type must be singular messages; e.g. they cannot
+              be int32s, enums, or repeated messages.
             
-             Because this is an option, the above two restrictions are not enforced by
-             the protocol compiler.
+              Because this is an option, the above two restrictions are not enforced by
+              the protocol compiler.
              </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MessageOptions.NoStandardDescriptorAccessorFieldNumber">
@@ -3338,9 +3346,9 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MessageOptions.NoStandardDescriptorAccessor">
             <summary>
-            Disables the generation of the standard "descriptor()" accessor, which can
-            conflict with a field of the same name.  This is meant to make migration
-            from proto1 easier; new code should avoid fields named "descriptor".
+             Disables the generation of the standard "descriptor()" accessor, which can
+             conflict with a field of the same name.  This is meant to make migration
+             from proto1 easier; new code should avoid fields named "descriptor".
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MessageOptions.DeprecatedFieldNumber">
@@ -3348,10 +3356,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MessageOptions.Deprecated">
             <summary>
-            Is this message deprecated?
-            Depending on the target platform, this can emit Deprecated annotations
-            for the message, or it will be completely ignored; in the very least,
-            this is a formalization for deprecating messages.
+             Is this message deprecated?
+             Depending on the target platform, this can emit Deprecated annotations
+             for the message, or it will be completely ignored; in the very least,
+             this is a formalization for deprecating messages.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MessageOptions.MapEntryFieldNumber">
@@ -3359,27 +3367,27 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MessageOptions.MapEntry">
              <summary>
-             Whether the message is an automatically generated map entry type for the
-             maps field.
+              Whether the message is an automatically generated map entry type for the
+              maps field.
             
-             For maps fields:
-                 map&lt;KeyType, ValueType> map_field = 1;
-             The parsed descriptor looks like:
-                 message MapFieldEntry {
-                     option map_entry = true;
-                     optional KeyType key = 1;
-                     optional ValueType value = 2;
-                 }
-                 repeated MapFieldEntry map_field = 1;
+              For maps fields:
+                  map&lt;KeyType, ValueType> map_field = 1;
+              The parsed descriptor looks like:
+                  message MapFieldEntry {
+                      option map_entry = true;
+                      optional KeyType key = 1;
+                      optional ValueType value = 2;
+                  }
+                  repeated MapFieldEntry map_field = 1;
             
-             Implementations may choose not to generate the map_entry=true message, but
-             use a native map in the target language to hold the keys and values.
-             The reflection APIs in such implementions still need to work as
-             if the field is a repeated message field.
+              Implementations may choose not to generate the map_entry=true message, but
+              use a native map in the target language to hold the keys and values.
+              The reflection APIs in such implementions still need to work as
+              if the field is a repeated message field.
             
-             NOTE: Do not set the option in .proto files. Always use the maps syntax
-             instead. The option should only be implicitly set by the proto compiler
-             parser.
+              NOTE: Do not set the option in .proto files. Always use the maps syntax
+              instead. The option should only be implicitly set by the proto compiler
+              parser.
              </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MessageOptions.UninterpretedOptionFieldNumber">
@@ -3387,7 +3395,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MessageOptions.UninterpretedOption">
             <summary>
-            The parser stores options it doesn't recognize here. See above.
+             The parser stores options it doesn't recognize here. See above.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.CtypeFieldNumber">
@@ -3395,10 +3403,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldOptions.Ctype">
             <summary>
-            The ctype option instructs the C++ code generator to use a different
-            representation of the field than it normally would.  See the specific
-            options below.  This option is not yet implemented in the open source
-            release -- sorry, we'll try to include it in a future version!
+             The ctype option instructs the C++ code generator to use a different
+             representation of the field than it normally would.  See the specific
+             options below.  This option is not yet implemented in the open source
+             release -- sorry, we'll try to include it in a future version!
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.PackedFieldNumber">
@@ -3406,11 +3414,11 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldOptions.Packed">
             <summary>
-            The packed option can be enabled for repeated primitive fields to enable
-            a more efficient representation on the wire. Rather than repeatedly
-            writing the tag and type for each element, the entire array is encoded as
-            a single length-delimited blob. In proto3, only explicit setting it to
-            false will avoid using packed encoding.
+             The packed option can be enabled for repeated primitive fields to enable
+             a more efficient representation on the wire. Rather than repeatedly
+             writing the tag and type for each element, the entire array is encoded as
+             a single length-delimited blob. In proto3, only explicit setting it to
+             false will avoid using packed encoding.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.JstypeFieldNumber">
@@ -3418,15 +3426,15 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldOptions.Jstype">
             <summary>
-            The jstype option determines the JavaScript type used for values of the
-            field.  The option is permitted only for 64 bit integral and fixed types
-            (int64, uint64, sint64, fixed64, sfixed64).  By default these types are
-            represented as JavaScript strings.  This avoids loss of precision that can
-            happen when a large value is converted to a floating point JavaScript
-            numbers.  Specifying JS_NUMBER for the jstype causes the generated
-            JavaScript code to use the JavaScript "number" type instead of strings.
-            This option is an enum to permit additional types to be added,
-            e.g. goog.math.Integer.
+             The jstype option determines the JavaScript type used for values of the
+             field.  The option is permitted only for 64 bit integral and fixed types
+             (int64, uint64, sint64, fixed64, sfixed64).  By default these types are
+             represented as JavaScript strings.  This avoids loss of precision that can
+             happen when a large value is converted to a floating point JavaScript
+             numbers.  Specifying JS_NUMBER for the jstype causes the generated
+             JavaScript code to use the JavaScript "number" type instead of strings.
+             This option is an enum to permit additional types to be added,
+             e.g. goog.math.Integer.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.LazyFieldNumber">
@@ -3434,33 +3442,33 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldOptions.Lazy">
              <summary>
-             Should this field be parsed lazily?  Lazy applies only to message-type
-             fields.  It means that when the outer message is initially parsed, the
-             inner message's contents will not be parsed but instead stored in encoded
-             form.  The inner message will actually be parsed when it is first accessed.
+              Should this field be parsed lazily?  Lazy applies only to message-type
+              fields.  It means that when the outer message is initially parsed, the
+              inner message's contents will not be parsed but instead stored in encoded
+              form.  The inner message will actually be parsed when it is first accessed.
             
-             This is only a hint.  Implementations are free to choose whether to use
-             eager or lazy parsing regardless of the value of this option.  However,
-             setting this option true suggests that the protocol author believes that
-             using lazy parsing on this field is worth the additional bookkeeping
-             overhead typically needed to implement it.
+              This is only a hint.  Implementations are free to choose whether to use
+              eager or lazy parsing regardless of the value of this option.  However,
+              setting this option true suggests that the protocol author believes that
+              using lazy parsing on this field is worth the additional bookkeeping
+              overhead typically needed to implement it.
             
-             This option does not affect the public interface of any generated code;
-             all method signatures remain the same.  Furthermore, thread-safety of the
-             interface is not affected by this option; const methods remain safe to
-             call from multiple threads concurrently, while non-const methods continue
-             to require exclusive access.
+              This option does not affect the public interface of any generated code;
+              all method signatures remain the same.  Furthermore, thread-safety of the
+              interface is not affected by this option; const methods remain safe to
+              call from multiple threads concurrently, while non-const methods continue
+              to require exclusive access.
             
-             Note that implementations may choose not to check required fields within
-             a lazy sub-message.  That is, calling IsInitialized() on the outer message
-             may return true even if the inner message has missing required fields.
-             This is necessary because otherwise the inner message would have to be
-             parsed in order to perform the check, defeating the purpose of lazy
-             parsing.  An implementation which chooses not to check required fields
-             must be consistent about it.  That is, for any particular sub-message, the
-             implementation must either *always* check its required fields, or *never*
-             check its required fields, regardless of whether or not the message has
-             been parsed.
+              Note that implementations may choose not to check required fields within
+              a lazy sub-message.  That is, calling IsInitialized() on the outher message
+              may return true even if the inner message has missing required fields.
+              This is necessary because otherwise the inner message would have to be
+              parsed in order to perform the check, defeating the purpose of lazy
+              parsing.  An implementation which chooses not to check required fields
+              must be consistent about it.  That is, for any particular sub-message, the
+              implementation must either *always* check its required fields, or *never*
+              check its required fields, regardless of whether or not the message has
+              been parsed.
              </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.DeprecatedFieldNumber">
@@ -3468,10 +3476,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldOptions.Deprecated">
             <summary>
-            Is this field deprecated?
-            Depending on the target platform, this can emit Deprecated annotations
-            for accessors, or it will be completely ignored; in the very least, this
-            is a formalization for deprecating fields.
+             Is this field deprecated?
+             Depending on the target platform, this can emit Deprecated annotations
+             for accessors, or it will be completely ignored; in the very least, this
+             is a formalization for deprecating fields.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.WeakFieldNumber">
@@ -3479,7 +3487,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldOptions.Weak">
             <summary>
-            For Google-internal migration only. Do not use.
+             For Google-internal migration only. Do not use.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.UninterpretedOptionFieldNumber">
@@ -3487,7 +3495,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldOptions.UninterpretedOption">
             <summary>
-            The parser stores options it doesn't recognize here. See above.
+             The parser stores options it doesn't recognize here. See above.
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.FieldOptions.Types">
@@ -3495,22 +3503,22 @@
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.Types.CType.String">
             <summary>
-            Default mode.
+             Default mode.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.Types.JSType.JsNormal">
             <summary>
-            Use the default type.
+             Use the default type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.Types.JSType.JsString">
             <summary>
-            Use JavaScript strings.
+             Use JavaScript strings.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.FieldOptions.Types.JSType.JsNumber">
             <summary>
-            Use JavaScript numbers.
+             Use JavaScript numbers.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.OneofOptions.UninterpretedOptionFieldNumber">
@@ -3518,7 +3526,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.OneofOptions.UninterpretedOption">
             <summary>
-            The parser stores options it doesn't recognize here. See above.
+             The parser stores options it doesn't recognize here. See above.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.EnumOptions.AllowAliasFieldNumber">
@@ -3526,8 +3534,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.EnumOptions.AllowAlias">
             <summary>
-            Set this option to true to allow mapping different tag names to the same
-            value.
+             Set this option to true to allow mapping different tag names to the same
+             value.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.EnumOptions.DeprecatedFieldNumber">
@@ -3535,10 +3543,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.EnumOptions.Deprecated">
             <summary>
-            Is this enum deprecated?
-            Depending on the target platform, this can emit Deprecated annotations
-            for the enum, or it will be completely ignored; in the very least, this
-            is a formalization for deprecating enums.
+             Is this enum deprecated?
+             Depending on the target platform, this can emit Deprecated annotations
+             for the enum, or it will be completely ignored; in the very least, this
+             is a formalization for deprecating enums.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.EnumOptions.UninterpretedOptionFieldNumber">
@@ -3546,7 +3554,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.EnumOptions.UninterpretedOption">
             <summary>
-            The parser stores options it doesn't recognize here. See above.
+             The parser stores options it doesn't recognize here. See above.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.EnumValueOptions.DeprecatedFieldNumber">
@@ -3554,10 +3562,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.EnumValueOptions.Deprecated">
             <summary>
-            Is this enum value deprecated?
-            Depending on the target platform, this can emit Deprecated annotations
-            for the enum value, or it will be completely ignored; in the very least,
-            this is a formalization for deprecating enum values.
+             Is this enum value deprecated?
+             Depending on the target platform, this can emit Deprecated annotations
+             for the enum value, or it will be completely ignored; in the very least,
+             this is a formalization for deprecating enum values.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.EnumValueOptions.UninterpretedOptionFieldNumber">
@@ -3565,7 +3573,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.EnumValueOptions.UninterpretedOption">
             <summary>
-            The parser stores options it doesn't recognize here. See above.
+             The parser stores options it doesn't recognize here. See above.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.ServiceOptions.DeprecatedFieldNumber">
@@ -3573,10 +3581,10 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.ServiceOptions.Deprecated">
             <summary>
-            Is this service deprecated?
-            Depending on the target platform, this can emit Deprecated annotations
-            for the service, or it will be completely ignored; in the very least,
-            this is a formalization for deprecating services.
+             Is this service deprecated?
+             Depending on the target platform, this can emit Deprecated annotations
+             for the service, or it will be completely ignored; in the very least,
+             this is a formalization for deprecating services.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.ServiceOptions.UninterpretedOptionFieldNumber">
@@ -3584,7 +3592,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.ServiceOptions.UninterpretedOption">
             <summary>
-            The parser stores options it doesn't recognize here. See above.
+             The parser stores options it doesn't recognize here. See above.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MethodOptions.DeprecatedFieldNumber">
@@ -3592,51 +3600,28 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MethodOptions.Deprecated">
             <summary>
-            Is this method deprecated?
-            Depending on the target platform, this can emit Deprecated annotations
-            for the method, or it will be completely ignored; in the very least,
-            this is a formalization for deprecating methods.
+             Is this method deprecated?
+             Depending on the target platform, this can emit Deprecated annotations
+             for the method, or it will be completely ignored; in the very least,
+             this is a formalization for deprecating methods.
             </summary>
-        </member>
-        <member name="F:Google.Protobuf.Reflection.MethodOptions.IdempotencyLevelFieldNumber">
-            <summary>Field number for the "idempotency_level" field.</summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.MethodOptions.UninterpretedOptionFieldNumber">
             <summary>Field number for the "uninterpreted_option" field.</summary>
         </member>
         <member name="P:Google.Protobuf.Reflection.MethodOptions.UninterpretedOption">
             <summary>
-            The parser stores options it doesn't recognize here. See above.
-            </summary>
-        </member>
-        <member name="T:Google.Protobuf.Reflection.MethodOptions.Types">
-            <summary>Container for nested types declared in the MethodOptions message type.</summary>
-        </member>
-        <member name="T:Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel">
-            <summary>
-            Is this method side-effect-free (or safe in HTTP parlance), or idempotent,
-            or neither? HTTP based RPC implementation may choose GET verb for safe
-            methods, and PUT verb for idempotent methods instead of the default POST.
-            </summary>
-        </member>
-        <member name="F:Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel.NoSideEffects">
-            <summary>
-            implies idempotent
-            </summary>
-        </member>
-        <member name="F:Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel.Idempotent">
-            <summary>
-            idempotent, but may have side effects
+             The parser stores options it doesn't recognize here. See above.
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.UninterpretedOption">
             <summary>
-            A message representing a option the parser does not recognize. This only
-            appears in options protos created by the compiler::Parser class.
-            DescriptorPool resolves these when building Descriptor objects. Therefore,
-            options protos in descriptor objects (e.g. returned by Descriptor::options(),
-            or produced by Descriptor::CopyTo()) will never have UninterpretedOptions
-            in them.
+             A message representing a option the parser does not recognize. This only
+             appears in options protos created by the compiler::Parser class.
+             DescriptorPool resolves these when building Descriptor objects. Therefore,
+             options protos in descriptor objects (e.g. returned by Descriptor::options(),
+             or produced by Descriptor::CopyTo()) will never have UninterpretedOptions
+             in them.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.UninterpretedOption.NameFieldNumber">
@@ -3647,8 +3632,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.UninterpretedOption.IdentifierValue">
             <summary>
-            The value of the uninterpreted option, in whatever type the tokenizer
-            identified it as during parsing. Exactly one of these should be set.
+             The value of the uninterpreted option, in whatever type the tokenizer
+             identified it as during parsing. Exactly one of these should be set.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.UninterpretedOption.PositiveIntValueFieldNumber">
@@ -3671,11 +3656,11 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart">
             <summary>
-            The name of the uninterpreted option.  Each string represents a segment in
-            a dot-separated name.  is_extension is true iff a segment represents an
-            extension (denoted with parentheses in options specs in .proto files).
-            E.g.,{ ["foo", false], ["bar.baz", true], ["qux", false] } represents
-            "foo.(bar.baz).qux".
+             The name of the uninterpreted option.  Each string represents a segment in
+             a dot-separated name.  is_extension is true iff a segment represents an
+             extension (denoted with parentheses in options specs in .proto files).
+             E.g.,{ ["foo", false], ["bar.baz", true], ["qux", false] } represents
+             "foo.(bar.baz).qux".
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart.NamePart_FieldNumber">
@@ -3686,8 +3671,8 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.SourceCodeInfo">
             <summary>
-            Encapsulates information about the original source file from which a
-            FileDescriptorProto was generated.
+             Encapsulates information about the original source file from which a
+             FileDescriptorProto was generated.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.SourceCodeInfo.LocationFieldNumber">
@@ -3695,49 +3680,49 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.SourceCodeInfo.Location">
              <summary>
-             A Location identifies a piece of source code in a .proto file which
-             corresponds to a particular definition.  This information is intended
-             to be useful to IDEs, code indexers, documentation generators, and similar
-             tools.
+              A Location identifies a piece of source code in a .proto file which
+              corresponds to a particular definition.  This information is intended
+              to be useful to IDEs, code indexers, documentation generators, and similar
+              tools.
             
-             For example, say we have a file like:
-               message Foo {
-                 optional string foo = 1;
-               }
-             Let's look at just the field definition:
-               optional string foo = 1;
-               ^       ^^     ^^  ^  ^^^
-               a       bc     de  f  ghi
-             We have the following locations:
-               span   path               represents
-               [a,i)  [ 4, 0, 2, 0 ]     The whole field definition.
-               [a,b)  [ 4, 0, 2, 0, 4 ]  The label (optional).
-               [c,d)  [ 4, 0, 2, 0, 5 ]  The type (string).
-               [e,f)  [ 4, 0, 2, 0, 1 ]  The name (foo).
-               [g,h)  [ 4, 0, 2, 0, 3 ]  The number (1).
+              For example, say we have a file like:
+                message Foo {
+                  optional string foo = 1;
+                }
+              Let's look at just the field definition:
+                optional string foo = 1;
+                ^       ^^     ^^  ^  ^^^
+                a       bc     de  f  ghi
+              We have the following locations:
+                span   path               represents
+                [a,i)  [ 4, 0, 2, 0 ]     The whole field definition.
+                [a,b)  [ 4, 0, 2, 0, 4 ]  The label (optional).
+                [c,d)  [ 4, 0, 2, 0, 5 ]  The type (string).
+                [e,f)  [ 4, 0, 2, 0, 1 ]  The name (foo).
+                [g,h)  [ 4, 0, 2, 0, 3 ]  The number (1).
             
-             Notes:
-             - A location may refer to a repeated field itself (i.e. not to any
-               particular index within it).  This is used whenever a set of elements are
-               logically enclosed in a single code segment.  For example, an entire
-               extend block (possibly containing multiple extension definitions) will
-               have an outer location whose path refers to the "extensions" repeated
-               field without an index.
-             - Multiple locations may have the same path.  This happens when a single
-               logical declaration is spread out across multiple places.  The most
-               obvious example is the "extend" block again -- there may be multiple
-               extend blocks in the same scope, each of which will have the same path.
-             - A location's span is not always a subset of its parent's span.  For
-               example, the "extendee" of an extension declaration appears at the
-               beginning of the "extend" block and is shared by all extensions within
-               the block.
-             - Just because a location's span is a subset of some other location's span
-               does not mean that it is a descendent.  For example, a "group" defines
-               both a type and a field in a single declaration.  Thus, the locations
-               corresponding to the type and field and their components will overlap.
-             - Code which tries to interpret locations should probably be designed to
-               ignore those that it doesn't understand, as more types of locations could
-               be recorded in the future.
+              Notes:
+              - A location may refer to a repeated field itself (i.e. not to any
+                particular index within it).  This is used whenever a set of elements are
+                logically enclosed in a single code segment.  For example, an entire
+                extend block (possibly containing multiple extension definitions) will
+                have an outer location whose path refers to the "extensions" repeated
+                field without an index.
+              - Multiple locations may have the same path.  This happens when a single
+                logical declaration is spread out across multiple places.  The most
+                obvious example is the "extend" block again -- there may be multiple
+                extend blocks in the same scope, each of which will have the same path.
+              - A location's span is not always a subset of its parent's span.  For
+                example, the "extendee" of an extension declaration appears at the
+                beginning of the "extend" block and is shared by all extensions within
+                the block.
+              - Just because a location's span is a subset of some other location's span
+                does not mean that it is a descendent.  For example, a "group" defines
+                both a type and a field in a single declaration.  Thus, the locations
+                corresponding to the type and field and their components will overlap.
+              - Code which tries to interpret locations should probably be designed to
+                ignore those that it doesn't understand, as more types of locations could
+                be recorded in the future.
              </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.SourceCodeInfo.Types">
@@ -3748,29 +3733,29 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.SourceCodeInfo.Types.Location.Path">
              <summary>
-             Identifies which part of the FileDescriptorProto was defined at this
-             location.
+              Identifies which part of the FileDescriptorProto was defined at this
+              location.
             
-             Each element is a field number or an index.  They form a path from
-             the root FileDescriptorProto to the place where the definition.  For
-             example, this path:
-               [ 4, 3, 2, 7, 1 ]
-             refers to:
-               file.message_type(3)  // 4, 3
-                   .field(7)         // 2, 7
-                   .name()           // 1
-             This is because FileDescriptorProto.message_type has field number 4:
-               repeated DescriptorProto message_type = 4;
-             and DescriptorProto.field has field number 2:
-               repeated FieldDescriptorProto field = 2;
-             and FieldDescriptorProto.name has field number 1:
-               optional string name = 1;
+              Each element is a field number or an index.  They form a path from
+              the root FileDescriptorProto to the place where the definition.  For
+              example, this path:
+                [ 4, 3, 2, 7, 1 ]
+              refers to:
+                file.message_type(3)  // 4, 3
+                    .field(7)         // 2, 7
+                    .name()           // 1
+              This is because FileDescriptorProto.message_type has field number 4:
+                repeated DescriptorProto message_type = 4;
+              and DescriptorProto.field has field number 2:
+                repeated FieldDescriptorProto field = 2;
+              and FieldDescriptorProto.name has field number 1:
+                optional string name = 1;
             
-             Thus, the above path gives the location of a field name.  If we removed
-             the last element:
-               [ 4, 3, 2, 7 ]
-             this path refers to the whole field declaration (from the beginning
-             of the label to the terminating semicolon).
+              Thus, the above path gives the location of a field name.  If we removed
+              the last element:
+                [ 4, 3, 2, 7 ]
+              this path refers to the whole field declaration (from the beginning
+              of the label to the terminating semicolon).
              </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.SourceCodeInfo.Types.Location.SpanFieldNumber">
@@ -3778,11 +3763,11 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.SourceCodeInfo.Types.Location.Span">
             <summary>
-            Always has exactly three or four elements: start line, start column,
-            end line (optional, otherwise assumed same as start line), end column.
-            These are packed into a single field for efficiency.  Note that line
-            and column numbers are zero-based -- typically you will want to add
-            1 to each before displaying to a user.
+             Always has exactly three or four elements: start line, start column,
+             end line (optional, otherwise assumed same as start line), end column.
+             These are packed into a single field for efficiency.  Note that line
+             and column numbers are zero-based -- typically you will want to add
+             1 to each before displaying to a user.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.SourceCodeInfo.Types.Location.LeadingCommentsFieldNumber">
@@ -3790,53 +3775,53 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.SourceCodeInfo.Types.Location.LeadingComments">
              <summary>
-             If this SourceCodeInfo represents a complete declaration, these are any
-             comments appearing before and after the declaration which appear to be
-             attached to the declaration.
+              If this SourceCodeInfo represents a complete declaration, these are any
+              comments appearing before and after the declaration which appear to be
+              attached to the declaration.
             
-             A series of line comments appearing on consecutive lines, with no other
-             tokens appearing on those lines, will be treated as a single comment.
+              A series of line comments appearing on consecutive lines, with no other
+              tokens appearing on those lines, will be treated as a single comment.
             
-             leading_detached_comments will keep paragraphs of comments that appear
-             before (but not connected to) the current element. Each paragraph,
-             separated by empty lines, will be one comment element in the repeated
-             field.
+              leading_detached_comments will keep paragraphs of comments that appear
+              before (but not connected to) the current element. Each paragraph,
+              separated by empty lines, will be one comment element in the repeated
+              field.
             
-             Only the comment content is provided; comment markers (e.g. //) are
-             stripped out.  For block comments, leading whitespace and an asterisk
-             will be stripped from the beginning of each line other than the first.
-             Newlines are included in the output.
+              Only the comment content is provided; comment markers (e.g. //) are
+              stripped out.  For block comments, leading whitespace and an asterisk
+              will be stripped from the beginning of each line other than the first.
+              Newlines are included in the output.
             
-             Examples:
+              Examples:
             
-               optional int32 foo = 1;  // Comment attached to foo.
-               // Comment attached to bar.
-               optional int32 bar = 2;
+                optional int32 foo = 1;  // Comment attached to foo.
+                // Comment attached to bar.
+                optional int32 bar = 2;
             
-               optional string baz = 3;
-               // Comment attached to baz.
-               // Another line attached to baz.
+                optional string baz = 3;
+                // Comment attached to baz.
+                // Another line attached to baz.
             
-               // Comment attached to qux.
-               //
-               // Another line attached to qux.
-               optional double qux = 4;
+                // Comment attached to qux.
+                //
+                // Another line attached to qux.
+                optional double qux = 4;
             
-               // Detached comment for corge. This is not leading or trailing comments
-               // to qux or corge because there are blank lines separating it from
-               // both.
+                // Detached comment for corge. This is not leading or trailing comments
+                // to qux or corge because there are blank lines separating it from
+                // both.
             
-               // Detached comment for corge paragraph 2.
+                // Detached comment for corge paragraph 2.
             
-               optional string corge = 5;
-               /* Block comment attached
-                * to corge.  Leading asterisks
-                * will be removed. */
-               /* Block comment attached to
-                * grault. */
-               optional int32 grault = 6;
+                optional string corge = 5;
+                /* Block comment attached
+                 * to corge.  Leading asterisks
+                 * will be removed. */
+                /* Block comment attached to
+                 * grault. */
+                optional int32 grault = 6;
             
-               // ignored detached comments.
+                // ignored detached comments.
              </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.SourceCodeInfo.Types.Location.TrailingCommentsFieldNumber">
@@ -3847,9 +3832,9 @@
         </member>
         <member name="T:Google.Protobuf.Reflection.GeneratedCodeInfo">
             <summary>
-            Describes the relationship between generated code and its original source
-            file. A GeneratedCodeInfo message is associated with only one generated
-            source file, but may contain references to different source .proto files.
+             Describes the relationship between generated code and its original source
+             file. A GeneratedCodeInfo message is associated with only one generated
+             source file, but may contain references to different source .proto files.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.GeneratedCodeInfo.AnnotationFieldNumber">
@@ -3857,8 +3842,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.GeneratedCodeInfo.Annotation">
             <summary>
-            An Annotation connects some span of text in generated code to an element
-            of its generating .proto file.
+             An Annotation connects some span of text in generated code to an element
+             of its generating .proto file.
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.GeneratedCodeInfo.Types">
@@ -3869,8 +3854,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation.Path">
             <summary>
-            Identifies the element in the original source .proto file. This field
-            is formatted the same as SourceCodeInfo.Location.path.
+             Identifies the element in the original source .proto file. This field
+             is formatted the same as SourceCodeInfo.Location.path.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation.SourceFileFieldNumber">
@@ -3878,7 +3863,7 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation.SourceFile">
             <summary>
-            Identifies the filesystem path to the original source .proto.
+             Identifies the filesystem path to the original source .proto.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation.BeginFieldNumber">
@@ -3886,8 +3871,8 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation.Begin">
             <summary>
-            Identifies the starting offset in bytes in the generated code
-            that relates to the identified object.
+             Identifies the starting offset in bytes in the generated code
+             that relates to the identified object.
             </summary>
         </member>
         <member name="F:Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation.EndFieldNumber">
@@ -3895,9 +3880,9 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation.End">
             <summary>
-            Identifies the ending offset in bytes in the generated code that
-            relates to the identified offset. The end offset should be one past
-            the last relevant byte (so the length of the text = end - begin).
+             Identifies the ending offset in bytes in the generated code that
+             relates to the identified offset. The end offset should be one past
+             the last relevant byte (so the length of the text = end - begin).
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.DescriptorBase">
@@ -4971,74 +4956,74 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Any">
              <summary>
-             `Any` contains an arbitrary serialized protocol buffer message along with a
-             URL that describes the type of the serialized message.
+              `Any` contains an arbitrary serialized protocol buffer message along with a
+              URL that describes the type of the serialized message.
             
-             Protobuf library provides support to pack/unpack Any values in the form
-             of utility functions or additional generated methods of the Any type.
+              Protobuf library provides support to pack/unpack Any values in the form
+              of utility functions or additional generated methods of the Any type.
             
-             Example 1: Pack and unpack a message in C++.
+              Example 1: Pack and unpack a message in C++.
             
-                 Foo foo = ...;
-                 Any any;
-                 any.PackFrom(foo);
-                 ...
-                 if (any.UnpackTo(&amp;foo)) {
-                   ...
-                 }
+                  Foo foo = ...;
+                  Any any;
+                  any.PackFrom(foo);
+                  ...
+                  if (any.UnpackTo(&amp;foo)) {
+                    ...
+                  }
             
-             Example 2: Pack and unpack a message in Java.
+              Example 2: Pack and unpack a message in Java.
             
-                 Foo foo = ...;
-                 Any any = Any.pack(foo);
-                 ...
-                 if (any.is(Foo.class)) {
-                   foo = any.unpack(Foo.class);
-                 }
+                  Foo foo = ...;
+                  Any any = Any.pack(foo);
+                  ...
+                  if (any.is(Foo.class)) {
+                    foo = any.unpack(Foo.class);
+                  }
             
-              Example 3: Pack and unpack a message in Python.
+               Example 3: Pack and unpack a message in Python.
             
-                 foo = Foo(...)
-                 any = Any()
-                 any.Pack(foo)
-                 ...
-                 if any.Is(Foo.DESCRIPTOR):
-                   any.Unpack(foo)
-                   ...
+                  foo = Foo(...)
+                  any = Any()
+                  any.Pack(foo)
+                  ...
+                  if any.Is(Foo.DESCRIPTOR):
+                    any.Unpack(foo)
+                    ...
             
-             The pack methods provided by protobuf library will by default use
-             'type.googleapis.com/full.type.name' as the type URL and the unpack
-             methods only use the fully qualified type name after the last '/'
-             in the type URL, for example "foo.bar.com/x/y.z" will yield type
-             name "y.z".
+              The pack methods provided by protobuf library will by default use
+              'type.googleapis.com/full.type.name' as the type URL and the unpack
+              methods only use the fully qualified type name after the last '/'
+              in the type URL, for example "foo.bar.com/x/y.z" will yield type
+              name "y.z".
             
-             JSON
-             ====
-             The JSON representation of an `Any` value uses the regular
-             representation of the deserialized, embedded message, with an
-             additional field `@type` which contains the type URL. Example:
+              JSON
+              ====
+              The JSON representation of an `Any` value uses the regular
+              representation of the deserialized, embedded message, with an
+              additional field `@type` which contains the type URL. Example:
             
-                 package google.profile;
-                 message Person {
-                   string first_name = 1;
-                   string last_name = 2;
-                 }
+                  package google.profile;
+                  message Person {
+                    string first_name = 1;
+                    string last_name = 2;
+                  }
             
-                 {
-                   "@type": "type.googleapis.com/google.profile.Person",
-                   "firstName": &lt;string>,
-                   "lastName": &lt;string>
-                 }
+                  {
+                    "@type": "type.googleapis.com/google.profile.Person",
+                    "firstName": &lt;string>,
+                    "lastName": &lt;string>
+                  }
             
-             If the embedded message type is well-known and has a custom JSON
-             representation, that representation will be embedded adding a field
-             `value` which holds the custom JSON in addition to the `@type`
-             field. Example (for message [google.protobuf.Duration][]):
+              If the embedded message type is well-known and has a custom JSON
+              representation, that representation will be embedded adding a field
+              `value` which holds the custom JSON in addition to the `@type`
+              field. Example (for message [google.protobuf.Duration][]):
             
-                 {
-                   "@type": "type.googleapis.com/google.protobuf.Duration",
-                   "value": "1.212s"
-                 }
+                  {
+                    "@type": "type.googleapis.com/google.protobuf.Duration",
+                    "value": "1.212s"
+                  }
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Any.TypeUrlFieldNumber">
@@ -5046,27 +5031,27 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Any.TypeUrl">
              <summary>
-             A URL/resource name whose content describes the type of the
-             serialized protocol buffer message.
+              A URL/resource name whose content describes the type of the
+              serialized protocol buffer message.
             
-             For URLs which use the scheme `http`, `https`, or no scheme, the
-             following restrictions and interpretations apply:
+              For URLs which use the scheme `http`, `https`, or no scheme, the
+              following restrictions and interpretations apply:
             
-             * If no scheme is provided, `https` is assumed.
-             * The last segment of the URL's path must represent the fully
-               qualified name of the type (as in `path/google.protobuf.Duration`).
-               The name should be in a canonical form (e.g., leading "." is
-               not accepted).
-             * An HTTP GET on the URL must yield a [google.protobuf.Type][]
-               value in binary format, or produce an error.
-             * Applications are allowed to cache lookup results based on the
-               URL, or have them precompiled into a binary to avoid any
-               lookup. Therefore, binary compatibility needs to be preserved
-               on changes to types. (Use versioned type names to manage
-               breaking changes.)
+              * If no scheme is provided, `https` is assumed.
+              * The last segment of the URL's path must represent the fully
+                qualified name of the type (as in `path/google.protobuf.Duration`).
+                The name should be in a canonical form (e.g., leading "." is
+                not accepted).
+              * An HTTP GET on the URL must yield a [google.protobuf.Type][]
+                value in binary format, or produce an error.
+              * Applications are allowed to cache lookup results based on the
+                URL, or have them precompiled into a binary to avoid any
+                lookup. Therefore, binary compatibility needs to be preserved
+                on changes to types. (Use versioned type names to manage
+                breaking changes.)
             
-             Schemes other than `http`, `https` (or the empty scheme) might be
-             used with implementation specific semantics.
+              Schemes other than `http`, `https` (or the empty scheme) might be
+              used with implementation specific semantics.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Any.ValueFieldNumber">
@@ -5074,7 +5059,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Any.Value">
             <summary>
-            Must be a valid serialized protocol buffer of the above specified type.
+             Must be a valid serialized protocol buffer of the above specified type.
             </summary>
         </member>
         <member name="M:Google.Protobuf.WellKnownTypes.Any.GetTypeName(System.String)">
@@ -5121,7 +5106,7 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Api">
             <summary>
-            Api is a light-weight descriptor for a protocol buffer service.
+             Api is a light-weight descriptor for a protocol buffer service.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Api.NameFieldNumber">
@@ -5129,8 +5114,8 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Api.Name">
             <summary>
-            The fully qualified name of this api, including package name
-            followed by the api's simple name.
+             The fully qualified name of this api, including package name
+             followed by the api's simple name.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Api.MethodsFieldNumber">
@@ -5138,7 +5123,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Api.Methods">
             <summary>
-            The methods of this api, in unspecified order.
+             The methods of this api, in unspecified order.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Api.OptionsFieldNumber">
@@ -5146,7 +5131,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Api.Options">
             <summary>
-            Any metadata attached to the API.
+             Any metadata attached to the API.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Api.VersionFieldNumber">
@@ -5154,26 +5139,26 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Api.Version">
              <summary>
-             A version string for this api. If specified, must have the form
-             `major-version.minor-version`, as in `1.10`. If the minor version
-             is omitted, it defaults to zero. If the entire version field is
-             empty, the major version is derived from the package name, as
-             outlined below. If the field is not empty, the version in the
-             package name will be verified to be consistent with what is
-             provided here.
+              A version string for this api. If specified, must have the form
+              `major-version.minor-version`, as in `1.10`. If the minor version
+              is omitted, it defaults to zero. If the entire version field is
+              empty, the major version is derived from the package name, as
+              outlined below. If the field is not empty, the version in the
+              package name will be verified to be consistent with what is
+              provided here.
             
-             The versioning schema uses [semantic
-             versioning](http://semver.org) where the major version number
-             indicates a breaking change and the minor version an additive,
-             non-breaking change. Both version numbers are signals to users
-             what to expect from different versions, and should be carefully
-             chosen based on the product plan.
+              The versioning schema uses [semantic
+              versioning](http://semver.org) where the major version number
+              indicates a breaking change and the minor version an additive,
+              non-breaking change. Both version numbers are signals to users
+              what to expect from different versions, and should be carefully
+              chosen based on the product plan.
             
-             The major version is also reflected in the package name of the
-             API, which must end in `v&lt;major-version>`, as in
-             `google.feature.v1`. For major versions 0 and 1, the suffix can
-             be omitted. Zero major versions must only be used for
-             experimental, none-GA apis.
+              The major version is also reflected in the package name of the
+              API, which must end in `v&lt;major-version>`, as in
+              `google.feature.v1`. For major versions 0 and 1, the suffix can
+              be omitted. Zero major versions must only be used for
+              experimental, none-GA apis.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Api.SourceContextFieldNumber">
@@ -5181,8 +5166,8 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Api.SourceContext">
             <summary>
-            Source context for the protocol buffer service represented by this
-            message.
+             Source context for the protocol buffer service represented by this
+             message.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Api.MixinsFieldNumber">
@@ -5190,7 +5175,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Api.Mixins">
             <summary>
-            Included APIs. See [Mixin][].
+             Included APIs. See [Mixin][].
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Api.SyntaxFieldNumber">
@@ -5198,12 +5183,12 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Api.Syntax">
             <summary>
-            The source syntax of the service.
+             The source syntax of the service.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Method">
             <summary>
-            Method represents a method of an api.
+             Method represents a method of an api.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Method.NameFieldNumber">
@@ -5211,7 +5196,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Method.Name">
             <summary>
-            The simple name of this method.
+             The simple name of this method.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Method.RequestTypeUrlFieldNumber">
@@ -5219,7 +5204,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Method.RequestTypeUrl">
             <summary>
-            A URL of the input message type.
+             A URL of the input message type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Method.RequestStreamingFieldNumber">
@@ -5227,7 +5212,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Method.RequestStreaming">
             <summary>
-            If true, the request is streamed.
+             If true, the request is streamed.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Method.ResponseTypeUrlFieldNumber">
@@ -5235,7 +5220,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Method.ResponseTypeUrl">
             <summary>
-            The URL of the output message type.
+             The URL of the output message type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Method.ResponseStreamingFieldNumber">
@@ -5243,7 +5228,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Method.ResponseStreaming">
             <summary>
-            If true, the response is streamed.
+             If true, the response is streamed.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Method.OptionsFieldNumber">
@@ -5251,7 +5236,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Method.Options">
             <summary>
-            Any metadata attached to the method.
+             Any metadata attached to the method.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Method.SyntaxFieldNumber">
@@ -5259,88 +5244,88 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Method.Syntax">
             <summary>
-            The source syntax of this method.
+             The source syntax of this method.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Mixin">
              <summary>
-             Declares an API to be included in this API. The including API must
-             redeclare all the methods from the included API, but documentation
-             and options are inherited as follows:
+              Declares an API to be included in this API. The including API must
+              redeclare all the methods from the included API, but documentation
+              and options are inherited as follows:
             
-             - If after comment and whitespace stripping, the documentation
-               string of the redeclared method is empty, it will be inherited
-               from the original method.
+              - If after comment and whitespace stripping, the documentation
+                string of the redeclared method is empty, it will be inherited
+                from the original method.
             
-             - Each annotation belonging to the service config (http,
-               visibility) which is not set in the redeclared method will be
-               inherited.
+              - Each annotation belonging to the service config (http,
+                visibility) which is not set in the redeclared method will be
+                inherited.
             
-             - If an http annotation is inherited, the path pattern will be
-               modified as follows. Any version prefix will be replaced by the
-               version of the including API plus the [root][] path if specified.
+              - If an http annotation is inherited, the path pattern will be
+                modified as follows. Any version prefix will be replaced by the
+                version of the including API plus the [root][] path if specified.
             
-             Example of a simple mixin:
+              Example of a simple mixin:
             
-                 package google.acl.v1;
-                 service AccessControl {
-                   // Get the underlying ACL object.
-                   rpc GetAcl(GetAclRequest) returns (Acl) {
-                     option (google.api.http).get = "/v1/{resource=**}:getAcl";
-                   }
-                 }
+                  package google.acl.v1;
+                  service AccessControl {
+                    // Get the underlying ACL object.
+                    rpc GetAcl(GetAclRequest) returns (Acl) {
+                      option (google.api.http).get = "/v1/{resource=**}:getAcl";
+                    }
+                  }
             
-                 package google.storage.v2;
-                 service Storage {
-                   rpc GetAcl(GetAclRequest) returns (Acl);
+                  package google.storage.v2;
+                  service Storage {
+                    rpc GetAcl(GetAclRequest) returns (Acl);
             
-                   // Get a data record.
-                   rpc GetData(GetDataRequest) returns (Data) {
-                     option (google.api.http).get = "/v2/{resource=**}";
-                   }
-                 }
+                    // Get a data record.
+                    rpc GetData(GetDataRequest) returns (Data) {
+                      option (google.api.http).get = "/v2/{resource=**}";
+                    }
+                  }
             
-             Example of a mixin configuration:
+              Example of a mixin configuration:
             
-                 apis:
-                 - name: google.storage.v2.Storage
-                   mixins:
-                   - name: google.acl.v1.AccessControl
+                  apis:
+                  - name: google.storage.v2.Storage
+                    mixins:
+                    - name: google.acl.v1.AccessControl
             
-             The mixin construct implies that all methods in `AccessControl` are
-             also declared with same name and request/response types in
-             `Storage`. A documentation generator or annotation processor will
-             see the effective `Storage.GetAcl` method after inherting
-             documentation and annotations as follows:
+              The mixin construct implies that all methods in `AccessControl` are
+              also declared with same name and request/response types in
+              `Storage`. A documentation generator or annotation processor will
+              see the effective `Storage.GetAcl` method after inherting
+              documentation and annotations as follows:
             
-                 service Storage {
-                   // Get the underlying ACL object.
-                   rpc GetAcl(GetAclRequest) returns (Acl) {
-                     option (google.api.http).get = "/v2/{resource=**}:getAcl";
-                   }
-                   ...
-                 }
+                  service Storage {
+                    // Get the underlying ACL object.
+                    rpc GetAcl(GetAclRequest) returns (Acl) {
+                      option (google.api.http).get = "/v2/{resource=**}:getAcl";
+                    }
+                    ...
+                  }
             
-             Note how the version in the path pattern changed from `v1` to `v2`.
+              Note how the version in the path pattern changed from `v1` to `v2`.
             
-             If the `root` field in the mixin is specified, it should be a
-             relative path under which inherited HTTP paths are placed. Example:
+              If the `root` field in the mixin is specified, it should be a
+              relative path under which inherited HTTP paths are placed. Example:
             
-                 apis:
-                 - name: google.storage.v2.Storage
-                   mixins:
-                   - name: google.acl.v1.AccessControl
-                     root: acls
+                  apis:
+                  - name: google.storage.v2.Storage
+                    mixins:
+                    - name: google.acl.v1.AccessControl
+                      root: acls
             
-             This implies the following inherited HTTP annotation:
+              This implies the following inherited HTTP annotation:
             
-                 service Storage {
-                   // Get the underlying ACL object.
-                   rpc GetAcl(GetAclRequest) returns (Acl) {
-                     option (google.api.http).get = "/v2/acls/{resource=**}:getAcl";
-                   }
-                   ...
-                 }
+                  service Storage {
+                    // Get the underlying ACL object.
+                    rpc GetAcl(GetAclRequest) returns (Acl) {
+                      option (google.api.http).get = "/v2/acls/{resource=**}:getAcl";
+                    }
+                    ...
+                  }
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Mixin.NameFieldNumber">
@@ -5348,7 +5333,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Mixin.Name">
             <summary>
-            The fully qualified name of the API which is included.
+             The fully qualified name of the API which is included.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Mixin.RootFieldNumber">
@@ -5356,8 +5341,8 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Mixin.Root">
             <summary>
-            If non-empty specifies a path under which inherited HTTP paths
-            are rooted.
+             If non-empty specifies a path under which inherited HTTP paths
+             are rooted.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.DurationReflection">
@@ -5368,52 +5353,46 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Duration">
              <summary>
-             A Duration represents a signed, fixed-length span of time represented
-             as a count of seconds and fractions of seconds at nanosecond
-             resolution. It is independent of any calendar and concepts like "day"
-             or "month". It is related to Timestamp in that the difference between
-             two Timestamp values is a Duration and it can be added or subtracted
-             from a Timestamp. Range is approximately +-10,000 years.
+              A Duration represents a signed, fixed-length span of time represented
+              as a count of seconds and fractions of seconds at nanosecond
+              resolution. It is independent of any calendar and concepts like "day"
+              or "month". It is related to Timestamp in that the difference between
+              two Timestamp values is a Duration and it can be added or subtracted
+              from a Timestamp. Range is approximately +-10,000 years.
             
-             Example 1: Compute Duration from two Timestamps in pseudo code.
+              Example 1: Compute Duration from two Timestamps in pseudo code.
             
-                 Timestamp start = ...;
-                 Timestamp end = ...;
-                 Duration duration = ...;
+                  Timestamp start = ...;
+                  Timestamp end = ...;
+                  Duration duration = ...;
             
-                 duration.seconds = end.seconds - start.seconds;
-                 duration.nanos = end.nanos - start.nanos;
+                  duration.seconds = end.seconds - start.seconds;
+                  duration.nanos = end.nanos - start.nanos;
             
-                 if (duration.seconds &lt; 0 &amp;&amp; duration.nanos > 0) {
-                   duration.seconds += 1;
-                   duration.nanos -= 1000000000;
-                 } else if (durations.seconds > 0 &amp;&amp; duration.nanos &lt; 0) {
-                   duration.seconds -= 1;
-                   duration.nanos += 1000000000;
-                 }
+                  if (duration.seconds &lt; 0 &amp;&amp; duration.nanos > 0) {
+                    duration.seconds += 1;
+                    duration.nanos -= 1000000000;
+                  } else if (durations.seconds > 0 &amp;&amp; duration.nanos &lt; 0) {
+                    duration.seconds -= 1;
+                    duration.nanos += 1000000000;
+                  }
             
-             Example 2: Compute Timestamp from Timestamp + Duration in pseudo code.
+              Example 2: Compute Timestamp from Timestamp + Duration in pseudo code.
             
-                 Timestamp start = ...;
-                 Duration duration = ...;
-                 Timestamp end = ...;
+                  Timestamp start = ...;
+                  Duration duration = ...;
+                  Timestamp end = ...;
             
-                 end.seconds = start.seconds + duration.seconds;
-                 end.nanos = start.nanos + duration.nanos;
+                  end.seconds = start.seconds + duration.seconds;
+                  end.nanos = start.nanos + duration.nanos;
             
-                 if (end.nanos &lt; 0) {
-                   end.seconds -= 1;
-                   end.nanos += 1000000000;
-                 } else if (end.nanos >= 1000000000) {
-                   end.seconds += 1;
-                   end.nanos -= 1000000000;
-                 }
-            
-             Example 3: Compute Duration from datetime.timedelta in Python.
-            
-                 td = datetime.timedelta(days=3, minutes=10)
-                 duration = Duration()
-                 duration.FromTimedelta(td)
+                  if (end.nanos &lt; 0) {
+                    end.seconds -= 1;
+                    end.nanos += 1000000000;
+                  } else if (end.nanos >= 1000000000) {
+                    end.seconds += 1;
+                    end.nanos -= 1000000000;
+                  }
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Duration.SecondsFieldNumber">
@@ -5421,8 +5400,8 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Duration.Seconds">
             <summary>
-            Signed seconds of the span of time. Must be from -315,576,000,000
-            to +315,576,000,000 inclusive.
+             Signed seconds of the span of time. Must be from -315,576,000,000
+             to +315,576,000,000 inclusive.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Duration.NanosFieldNumber">
@@ -5430,12 +5409,12 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Duration.Nanos">
             <summary>
-            Signed fractions of a second at nanosecond resolution of the span
-            of time. Durations less than one second are represented with a 0
-            `seconds` field and a positive or negative `nanos` field. For durations
-            of one second or more, a non-zero value for the `nanos` field must be
-            of the same sign as the `seconds` field. Must be from -999,999,999
-            to +999,999,999 inclusive.
+             Signed fractions of a second at nanosecond resolution of the span
+             of time. Durations less than one second are represented with a 0
+             `seconds` field and a positive or negative `nanos` field. For durations
+             of one second or more, a non-zero value for the `nanos` field must be
+             of the same sign as the `seconds` field. Must be from -999,999,999
+             to +999,999,999 inclusive.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Duration.NanosecondsPerSecond">
@@ -5545,15 +5524,15 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Empty">
              <summary>
-             A generic empty message that you can re-use to avoid defining duplicated
-             empty messages in your APIs. A typical example is to use it as the request
-             or the response type of an API method. For instance:
+              A generic empty message that you can re-use to avoid defining duplicated
+              empty messages in your APIs. A typical example is to use it as the request
+              or the response type of an API method. For instance:
             
-                 service Foo {
-                   rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
-                 }
+                  service Foo {
+                    rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+                  }
             
-             The JSON representation for `Empty` is empty JSON object `{}`.
+              The JSON representation for `Empty` is empty JSON object `{}`.
              </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.FieldMaskReflection">
@@ -5564,206 +5543,206 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.FieldMask">
              <summary>
-             `FieldMask` represents a set of symbolic field paths, for example:
+              `FieldMask` represents a set of symbolic field paths, for example:
             
-                 paths: "f.a"
-                 paths: "f.b.d"
+                  paths: "f.a"
+                  paths: "f.b.d"
             
-             Here `f` represents a field in some root message, `a` and `b`
-             fields in the message found in `f`, and `d` a field found in the
-             message in `f.b`.
+              Here `f` represents a field in some root message, `a` and `b`
+              fields in the message found in `f`, and `d` a field found in the
+              message in `f.b`.
             
-             Field masks are used to specify a subset of fields that should be
-             returned by a get operation or modified by an update operation.
-             Field masks also have a custom JSON encoding (see below).
+              Field masks are used to specify a subset of fields that should be
+              returned by a get operation or modified by an update operation.
+              Field masks also have a custom JSON encoding (see below).
             
-             # Field Masks in Projections
+              # Field Masks in Projections
             
-             When used in the context of a projection, a response message or
-             sub-message is filtered by the API to only contain those fields as
-             specified in the mask. For example, if the mask in the previous
-             example is applied to a response message as follows:
+              When used in the context of a projection, a response message or
+              sub-message is filtered by the API to only contain those fields as
+              specified in the mask. For example, if the mask in the previous
+              example is applied to a response message as follows:
             
-                 f {
-                   a : 22
-                   b {
-                     d : 1
-                     x : 2
-                   }
-                   y : 13
-                 }
-                 z: 8
+                  f {
+                    a : 22
+                    b {
+                      d : 1
+                      x : 2
+                    }
+                    y : 13
+                  }
+                  z: 8
             
-             The result will not contain specific values for fields x,y and z
-             (their value will be set to the default, and omitted in proto text
-             output):
+              The result will not contain specific values for fields x,y and z
+              (their value will be set to the default, and omitted in proto text
+              output):
             
-                 f {
-                   a : 22
-                   b {
-                     d : 1
-                   }
-                 }
+                  f {
+                    a : 22
+                    b {
+                      d : 1
+                    }
+                  }
             
-             A repeated field is not allowed except at the last position of a
-             paths string.
+              A repeated field is not allowed except at the last position of a
+              field mask.
             
-             If a FieldMask object is not present in a get operation, the
-             operation applies to all fields (as if a FieldMask of all fields
-             had been specified).
+              If a FieldMask object is not present in a get operation, the
+              operation applies to all fields (as if a FieldMask of all fields
+              had been specified).
             
-             Note that a field mask does not necessarily apply to the
-             top-level response message. In case of a REST get operation, the
-             field mask applies directly to the response, but in case of a REST
-             list operation, the mask instead applies to each individual message
-             in the returned resource list. In case of a REST custom method,
-             other definitions may be used. Where the mask applies will be
-             clearly documented together with its declaration in the API.  In
-             any case, the effect on the returned resource/resources is required
-             behavior for APIs.
+              Note that a field mask does not necessarily apply to the
+              top-level response message. In case of a REST get operation, the
+              field mask applies directly to the response, but in case of a REST
+              list operation, the mask instead applies to each individual message
+              in the returned resource list. In case of a REST custom method,
+              other definitions may be used. Where the mask applies will be
+              clearly documented together with its declaration in the API.  In
+              any case, the effect on the returned resource/resources is required
+              behavior for APIs.
             
-             # Field Masks in Update Operations
+              # Field Masks in Update Operations
             
-             A field mask in update operations specifies which fields of the
-             targeted resource are going to be updated. The API is required
-             to only change the values of the fields as specified in the mask
-             and leave the others untouched. If a resource is passed in to
-             describe the updated values, the API ignores the values of all
-             fields not covered by the mask.
+              A field mask in update operations specifies which fields of the
+              targeted resource are going to be updated. The API is required
+              to only change the values of the fields as specified in the mask
+              and leave the others untouched. If a resource is passed in to
+              describe the updated values, the API ignores the values of all
+              fields not covered by the mask.
             
-             If a repeated field is specified for an update operation, the existing
-             repeated values in the target resource will be overwritten by the new values.
-             Note that a repeated field is only allowed in the last position of a `paths`
-             string.
+              If a repeated field is specified for an update operation, the existing
+              repeated values in the target resource will be overwritten by the new values.
+              Note that a repeated field is only allowed in the last position of a field
+              mask.
             
-             If a sub-message is specified in the last position of the field mask for an
-             update operation, then the existing sub-message in the target resource is
-             overwritten. Given the target message:
+              If a sub-message is specified in the last position of the field mask for an
+              update operation, then the existing sub-message in the target resource is
+              overwritten. Given the target message:
             
-                 f {
-                   b {
-                     d : 1
-                     x : 2
-                   }
-                   c : 1
-                 }
+                  f {
+                    b {
+                      d : 1
+                      x : 2
+                    }
+                    c : 1
+                  }
             
-             And an update message:
+              And an update message:
             
-                 f {
-                   b {
-                     d : 10
-                   }
-                 }
+                  f {
+                    b {
+                      d : 10
+                    }
+                  }
             
-             then if the field mask is:
+              then if the field mask is:
             
-              paths: "f.b"
+               paths: "f.b"
             
-             then the result will be:
+              then the result will be:
             
-                 f {
-                   b {
-                     d : 10
-                   }
-                   c : 1
-                 }
+                  f {
+                    b {
+                      d : 10
+                    }
+                    c : 1
+                  }
             
-             However, if the update mask was:
+              However, if the update mask was:
             
-              paths: "f.b.d"
+               paths: "f.b.d"
             
-             then the result would be:
+              then the result would be:
             
-                 f {
-                   b {
-                     d : 10
-                     x : 2
-                   }
-                   c : 1
-                 }
+                  f {
+                    b {
+                      d : 10
+                      x : 2
+                    }
+                    c : 1
+                  }
             
-             In order to reset a field's value to the default, the field must
-             be in the mask and set to the default value in the provided resource.
-             Hence, in order to reset all fields of a resource, provide a default
-             instance of the resource and set all fields in the mask, or do
-             not provide a mask as described below.
+              In order to reset a field's value to the default, the field must
+              be in the mask and set to the default value in the provided resource.
+              Hence, in order to reset all fields of a resource, provide a default
+              instance of the resource and set all fields in the mask, or do
+              not provide a mask as described below.
             
-             If a field mask is not present on update, the operation applies to
-             all fields (as if a field mask of all fields has been specified).
-             Note that in the presence of schema evolution, this may mean that
-             fields the client does not know and has therefore not filled into
-             the request will be reset to their default. If this is unwanted
-             behavior, a specific service may require a client to always specify
-             a field mask, producing an error if not.
+              If a field mask is not present on update, the operation applies to
+              all fields (as if a field mask of all fields has been specified).
+              Note that in the presence of schema evolution, this may mean that
+              fields the client does not know and has therefore not filled into
+              the request will be reset to their default. If this is unwanted
+              behavior, a specific service may require a client to always specify
+              a field mask, producing an error if not.
             
-             As with get operations, the location of the resource which
-             describes the updated values in the request message depends on the
-             operation kind. In any case, the effect of the field mask is
-             required to be honored by the API.
+              As with get operations, the location of the resource which
+              describes the updated values in the request message depends on the
+              operation kind. In any case, the effect of the field mask is
+              required to be honored by the API.
             
-             ## Considerations for HTTP REST
+              ## Considerations for HTTP REST
             
-             The HTTP kind of an update operation which uses a field mask must
-             be set to PATCH instead of PUT in order to satisfy HTTP semantics
-             (PUT must only be used for full updates).
+              The HTTP kind of an update operation which uses a field mask must
+              be set to PATCH instead of PUT in order to satisfy HTTP semantics
+              (PUT must only be used for full updates).
             
-             # JSON Encoding of Field Masks
+              # JSON Encoding of Field Masks
             
-             In JSON, a field mask is encoded as a single string where paths are
-             separated by a comma. Fields name in each path are converted
-             to/from lower-camel naming conventions.
+              In JSON, a field mask is encoded as a single string where paths are
+              separated by a comma. Fields name in each path are converted
+              to/from lower-camel naming conventions.
             
-             As an example, consider the following message declarations:
+              As an example, consider the following message declarations:
             
-                 message Profile {
-                   User user = 1;
-                   Photo photo = 2;
-                 }
-                 message User {
-                   string display_name = 1;
-                   string address = 2;
-                 }
+                  message Profile {
+                    User user = 1;
+                    Photo photo = 2;
+                  }
+                  message User {
+                    string display_name = 1;
+                    string address = 2;
+                  }
             
-             In proto a field mask for `Profile` may look as such:
+              In proto a field mask for `Profile` may look as such:
             
-                 mask {
-                   paths: "user.display_name"
-                   paths: "photo"
-                 }
+                  mask {
+                    paths: "user.display_name"
+                    paths: "photo"
+                  }
             
-             In JSON, the same mask is represented as below:
+              In JSON, the same mask is represented as below:
             
-                 {
-                   mask: "user.displayName,photo"
-                 }
+                  {
+                    mask: "user.displayName,photo"
+                  }
             
-             # Field Masks and Oneof Fields
+              # Field Masks and Oneof Fields
             
-             Field masks treat fields in oneofs just as regular fields. Consider the
-             following message:
+              Field masks treat fields in oneofs just as regular fields. Consider the
+              following message:
             
-                 message SampleMessage {
-                   oneof test_oneof {
-                     string name = 4;
-                     SubMessage sub_message = 9;
-                   }
-                 }
+                  message SampleMessage {
+                    oneof test_oneof {
+                      string name = 4;
+                      SubMessage sub_message = 9;
+                    }
+                  }
             
-             The field mask can be:
+              The field mask can be:
             
-                 mask {
-                   paths: "name"
-                 }
+                  mask {
+                    paths: "name"
+                  }
             
-             Or:
+              Or:
             
-                 mask {
-                   paths: "sub_message"
-                 }
+                  mask {
+                    paths: "sub_message"
+                  }
             
-             Note that oneof type names ("test_oneof" in this case) cannot be used in
-             paths.
+              Note that oneof type names ("test_oneof" in this case) cannot be used in
+              paths.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.FieldMask.PathsFieldNumber">
@@ -5771,7 +5750,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.FieldMask.Paths">
             <summary>
-            The set of field mask paths.
+             The set of field mask paths.
             </summary>
         </member>
         <member name="M:Google.Protobuf.WellKnownTypes.FieldMask.ToJson(System.Collections.Generic.IList{System.String},System.Boolean)">
@@ -5785,13 +5764,13 @@
             </remarks>
             <param name="paths">Paths in the field mask</param>
             <param name="diagnosticOnly">Determines the handling of non-normalized values</param>
-            <exception cref="T:System.InvalidOperationException">The represented field mask is invalid, and <paramref name="diagnosticOnly"/> is <c>false</c>.</exception>
+            <exception cref="T:System.InvalidOperationException">The represented duration is invalid, and <paramref name="diagnosticOnly"/> is <c>false</c>.</exception>
         </member>
         <member name="M:Google.Protobuf.WellKnownTypes.FieldMask.ValidatePath(System.String)">
             <summary>
-            Checks whether the given path is valid for a field mask.
+            Camel-case converter with added strictness for field mask formatting.
             </summary>
-            <returns>true if the path is valid; false otherwise</returns>
+            <exception cref="T:System.InvalidOperationException">The field mask is invalid for JSON representation</exception>
         </member>
         <member name="M:Google.Protobuf.WellKnownTypes.FieldMask.ToDiagnosticString">
             <summary>
@@ -5814,8 +5793,8 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.SourceContext">
             <summary>
-            `SourceContext` represents information about the source of a
-            protobuf element, like the file in which it is defined.
+             `SourceContext` represents information about the source of a
+             protobuf element, like the file in which it is defined.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.SourceContext.FileNameFieldNumber">
@@ -5823,8 +5802,8 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.SourceContext.FileName">
             <summary>
-            The path-qualified name of the .proto file that contained the associated
-            protobuf element.  For example: `"google/protobuf/source_context.proto"`.
+             The path-qualified name of the .proto file that contained the associated
+             protobuf element.  For example: `"google/protobuf/source_context.proto"`.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.StructReflection">
@@ -5835,27 +5814,27 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.NullValue">
              <summary>
-             `NullValue` is a singleton enumeration to represent the null value for the
-             `Value` type union.
+              `NullValue` is a singleton enumeration to represent the null value for the
+              `Value` type union.
             
-              The JSON representation for `NullValue` is JSON `null`.
+               The JSON representation for `NullValue` is JSON `null`.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.NullValue.NullValue">
             <summary>
-            Null value.
+             Null value.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Struct">
              <summary>
-             `Struct` represents a structured data value, consisting of fields
-             which map to dynamically typed values. In some languages, `Struct`
-             might be supported by a native representation. For example, in
-             scripting languages like JS a struct is represented as an
-             object. The details of that representation are described together
-             with the proto support for the language.
+              `Struct` represents a structured data value, consisting of fields
+              which map to dynamically typed values. In some languages, `Struct`
+              might be supported by a native representation. For example, in
+              scripting languages like JS a struct is represented as an
+              object. The details of that representation are described together
+              with the proto support for the language.
             
-             The JSON representation for `Struct` is JSON object.
+              The JSON representation for `Struct` is JSON object.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Struct.FieldsFieldNumber">
@@ -5863,17 +5842,17 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Struct.Fields">
             <summary>
-            Unordered map of dynamically typed values.
+             Unordered map of dynamically typed values.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Value">
              <summary>
-             `Value` represents a dynamically typed value which can be either
-             null, a number, a string, a boolean, a recursive struct value, or a
-             list of values. A producer of value is expected to set one of that
-             variants, absence of any variant indicates an error.
+              `Value` represents a dynamically typed value which can be either
+              null, a number, a string, a boolean, a recursive struct value, or a
+              list of values. A producer of value is expected to set one of that
+              variants, absence of any variant indicates an error.
             
-             The JSON representation for `Value` is JSON value.
+              The JSON representation for `Value` is JSON value.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Value.NullValueFieldNumber">
@@ -5881,7 +5860,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Value.NullValue">
             <summary>
-            Represents a null value.
+             Represents a null value.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Value.NumberValueFieldNumber">
@@ -5889,7 +5868,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Value.NumberValue">
             <summary>
-            Represents a double value.
+             Represents a double value.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Value.StringValueFieldNumber">
@@ -5897,7 +5876,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Value.StringValue">
             <summary>
-            Represents a string value.
+             Represents a string value.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Value.BoolValueFieldNumber">
@@ -5905,7 +5884,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Value.BoolValue">
             <summary>
-            Represents a boolean value.
+             Represents a boolean value.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Value.StructValueFieldNumber">
@@ -5913,7 +5892,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Value.StructValue">
             <summary>
-            Represents a structured value.
+             Represents a structured value.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Value.ListValueFieldNumber">
@@ -5921,7 +5900,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Value.ListValue">
             <summary>
-            Represents a repeated `Value`.
+             Represents a repeated `Value`.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Value.KindOneofCase">
@@ -5970,9 +5949,9 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.ListValue">
              <summary>
-             `ListValue` is a wrapper around a repeated field of values.
+              `ListValue` is a wrapper around a repeated field of values.
             
-             The JSON representation for `ListValue` is JSON array.
+              The JSON representation for `ListValue` is JSON array.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.ListValue.ValuesFieldNumber">
@@ -5980,7 +5959,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.ListValue.Values">
             <summary>
-            Repeated field of dynamically typed values.
+             Repeated field of dynamically typed values.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.TimeExtensions">
@@ -6021,56 +6000,58 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Timestamp">
              <summary>
-             A Timestamp represents a point in time independent of any time zone
-             or calendar, represented as seconds and fractions of seconds at
-             nanosecond resolution in UTC Epoch time. It is encoded using the
-             Proleptic Gregorian Calendar which extends the Gregorian calendar
-             backwards to year one. It is encoded assuming all minutes are 60
-             seconds long, i.e. leap seconds are "smeared" so that no leap second
-             table is needed for interpretation. Range is from
-             0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z.
-             By restricting to that range, we ensure that we can convert to
-             and from  RFC 3339 date strings.
-             See [https://www.ietf.org/rfc/rfc3339.txt](https://www.ietf.org/rfc/rfc3339.txt).
+              A Timestamp represents a point in time independent of any time zone
+              or calendar, represented as seconds and fractions of seconds at
+              nanosecond resolution in UTC Epoch time. It is encoded using the
+              Proleptic Gregorian Calendar which extends the Gregorian calendar
+              backwards to year one. It is encoded assuming all minutes are 60
+              seconds long, i.e. leap seconds are "smeared" so that no leap second
+              table is needed for interpretation. Range is from
+              0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z.
+              By restricting to that range, we ensure that we can convert to
+              and from  RFC 3339 date strings.
+              See [https://www.ietf.org/rfc/rfc3339.txt](https://www.ietf.org/rfc/rfc3339.txt).
             
-             Example 1: Compute Timestamp from POSIX `time()`.
+              Example 1: Compute Timestamp from POSIX `time()`.
             
-                 Timestamp timestamp;
-                 timestamp.set_seconds(time(NULL));
-                 timestamp.set_nanos(0);
+                  Timestamp timestamp;
+                  timestamp.set_seconds(time(NULL));
+                  timestamp.set_nanos(0);
             
-             Example 2: Compute Timestamp from POSIX `gettimeofday()`.
+              Example 2: Compute Timestamp from POSIX `gettimeofday()`.
             
-                 struct timeval tv;
-                 gettimeofday(&amp;tv, NULL);
+                  struct timeval tv;
+                  gettimeofday(&amp;tv, NULL);
             
-                 Timestamp timestamp;
-                 timestamp.set_seconds(tv.tv_sec);
-                 timestamp.set_nanos(tv.tv_usec * 1000);
+                  Timestamp timestamp;
+                  timestamp.set_seconds(tv.tv_sec);
+                  timestamp.set_nanos(tv.tv_usec * 1000);
             
-             Example 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.
+              Example 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.
             
-                 FILETIME ft;
-                 GetSystemTimeAsFileTime(&amp;ft);
-                 UINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;
+                  FILETIME ft;
+                  GetSystemTimeAsFileTime(&amp;ft);
+                  UINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;
             
-                 // A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z
-                 // is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.
-                 Timestamp timestamp;
-                 timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));
-                 timestamp.set_nanos((INT32) ((ticks % 10000000) * 100));
+                  // A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z
+                  // is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.
+                  Timestamp timestamp;
+                  timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));
+                  timestamp.set_nanos((INT32) ((ticks % 10000000) * 100));
             
-             Example 4: Compute Timestamp from Java `System.currentTimeMillis()`.
+              Example 4: Compute Timestamp from Java `System.currentTimeMillis()`.
             
-                 long millis = System.currentTimeMillis();
+                  long millis = System.currentTimeMillis();
             
-                 Timestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)
-                     .setNanos((int) ((millis % 1000) * 1000000)).build();
+                  Timestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)
+                      .setNanos((int) ((millis % 1000) * 1000000)).build();
             
-             Example 5: Compute Timestamp from current time in Python.
+              Example 5: Compute Timestamp from current time in Python.
             
-                 timestamp = Timestamp()
-                 timestamp.GetCurrentTime()
+                  now = time.time()
+                  seconds = int(now)
+                  nanos = int((now - seconds) * 10**9)
+                  timestamp = Timestamp(seconds=seconds, nanos=nanos)
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Timestamp.SecondsFieldNumber">
@@ -6078,9 +6059,9 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Timestamp.Seconds">
             <summary>
-            Represents seconds of UTC time since Unix epoch
-            1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
-            9999-12-31T23:59:59Z inclusive.
+             Represents seconds of UTC time since Unix epoch
+             1970-01-01T00:00:00Z. Must be from from 0001-01-01T00:00:00Z to
+             9999-12-31T23:59:59Z inclusive.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Timestamp.NanosFieldNumber">
@@ -6088,10 +6069,10 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Timestamp.Nanos">
             <summary>
-            Non-negative fractions of a second at nanosecond resolution. Negative
-            second values with fractions must still have non-negative nanos values
-            that count forward in time. Must be from 0 to 999,999,999
-            inclusive.
+             Non-negative fractions of a second at nanosecond resolution. Negative
+             second values with fractions must still have non-negative nanos values
+             that count forward in time. Must be from 0 to 999,999,999
+             inclusive.
             </summary>
         </member>
         <member name="M:Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Timestamp)">
@@ -6199,22 +6180,22 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Syntax">
             <summary>
-            The syntax in which a protocol buffer element is defined.
+             The syntax in which a protocol buffer element is defined.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Syntax.Proto2">
             <summary>
-            Syntax `proto2`.
+             Syntax `proto2`.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Syntax.Proto3">
             <summary>
-            Syntax `proto3`.
+             Syntax `proto3`.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Type">
             <summary>
-            A protocol buffer message type.
+             A protocol buffer message type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Type.NameFieldNumber">
@@ -6222,7 +6203,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Type.Name">
             <summary>
-            The fully qualified message name.
+             The fully qualified message name.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Type.FieldsFieldNumber">
@@ -6230,7 +6211,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Type.Fields">
             <summary>
-            The list of fields.
+             The list of fields.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Type.OneofsFieldNumber">
@@ -6238,7 +6219,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Type.Oneofs">
             <summary>
-            The list of types appearing in `oneof` definitions in this type.
+             The list of types appearing in `oneof` definitions in this type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Type.OptionsFieldNumber">
@@ -6246,7 +6227,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Type.Options">
             <summary>
-            The protocol buffer options.
+             The protocol buffer options.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Type.SourceContextFieldNumber">
@@ -6254,7 +6235,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Type.SourceContext">
             <summary>
-            The source context.
+             The source context.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Type.SyntaxFieldNumber">
@@ -6262,12 +6243,12 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Type.Syntax">
             <summary>
-            The source syntax.
+             The source syntax.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Field">
             <summary>
-            A single field of a message type.
+             A single field of a message type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.KindFieldNumber">
@@ -6275,7 +6256,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.Kind">
             <summary>
-            The field type.
+             The field type.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.CardinalityFieldNumber">
@@ -6283,7 +6264,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.Cardinality">
             <summary>
-            The field cardinality.
+             The field cardinality.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.NumberFieldNumber">
@@ -6291,7 +6272,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.Number">
             <summary>
-            The field number.
+             The field number.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.NameFieldNumber">
@@ -6299,7 +6280,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.Name">
             <summary>
-            The field name.
+             The field name.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.TypeUrlFieldNumber">
@@ -6307,8 +6288,8 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.TypeUrl">
             <summary>
-            The field type URL, without the scheme, for message or enumeration
-            types. Example: `"type.googleapis.com/google.protobuf.Timestamp"`.
+             The field type URL, without the scheme, for message or enumeration
+             types. Example: `"type.googleapis.com/google.protobuf.Timestamp"`.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.OneofIndexFieldNumber">
@@ -6316,8 +6297,8 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.OneofIndex">
             <summary>
-            The index of the field type in `Type.oneofs`, for message or enumeration
-            types. The first type has index 1; zero means the type is not in the list.
+             The index of the field type in `Type.oneofs`, for message or enumeration
+             types. The first type has index 1; zero means the type is not in the list.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.PackedFieldNumber">
@@ -6325,7 +6306,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.Packed">
             <summary>
-            Whether to use alternative packed wire representation.
+             Whether to use alternative packed wire representation.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.OptionsFieldNumber">
@@ -6333,7 +6314,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.Options">
             <summary>
-            The protocol buffer options.
+             The protocol buffer options.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.JsonNameFieldNumber">
@@ -6341,7 +6322,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.JsonName">
             <summary>
-            The field JSON name.
+             The field JSON name.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.DefaultValueFieldNumber">
@@ -6349,7 +6330,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Field.DefaultValue">
             <summary>
-            The string value of the default value of this field. Proto2 syntax only.
+             The string value of the default value of this field. Proto2 syntax only.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Field.Types">
@@ -6357,132 +6338,132 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Field.Types.Kind">
             <summary>
-            Basic field types.
+             Basic field types.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeUnknown">
             <summary>
-            Field type unknown.
+             Field type unknown.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeDouble">
             <summary>
-            Field type double.
+             Field type double.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeFloat">
             <summary>
-            Field type float.
+             Field type float.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeInt64">
             <summary>
-            Field type int64.
+             Field type int64.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeUint64">
             <summary>
-            Field type uint64.
+             Field type uint64.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeInt32">
             <summary>
-            Field type int32.
+             Field type int32.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeFixed64">
             <summary>
-            Field type fixed64.
+             Field type fixed64.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeFixed32">
             <summary>
-            Field type fixed32.
+             Field type fixed32.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeBool">
             <summary>
-            Field type bool.
+             Field type bool.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeString">
             <summary>
-            Field type string.
+             Field type string.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeGroup">
             <summary>
-            Field type group. Proto2 syntax only, and deprecated.
+             Field type group. Proto2 syntax only, and deprecated.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeMessage">
             <summary>
-            Field type message.
+             Field type message.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeBytes">
             <summary>
-            Field type bytes.
+             Field type bytes.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeUint32">
             <summary>
-            Field type uint32.
+             Field type uint32.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeEnum">
             <summary>
-            Field type enum.
+             Field type enum.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeSfixed32">
             <summary>
-            Field type sfixed32.
+             Field type sfixed32.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeSfixed64">
             <summary>
-            Field type sfixed64.
+             Field type sfixed64.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeSint32">
             <summary>
-            Field type sint32.
+             Field type sint32.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Kind.TypeSint64">
             <summary>
-            Field type sint64.
+             Field type sint64.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Field.Types.Cardinality">
             <summary>
-            Whether a field is optional, required, or repeated.
+             Whether a field is optional, required, or repeated.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Cardinality.Unknown">
             <summary>
-            For fields with unknown cardinality.
+             For fields with unknown cardinality.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Cardinality.Optional">
             <summary>
-            For optional fields.
+             For optional fields.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Cardinality.Required">
             <summary>
-            For required fields. Proto2 syntax only.
+             For required fields. Proto2 syntax only.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Field.Types.Cardinality.Repeated">
             <summary>
-            For repeated fields.
+             For repeated fields.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Enum">
             <summary>
-            Enum type definition.
+             Enum type definition.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Enum.NameFieldNumber">
@@ -6490,7 +6471,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Enum.Name">
             <summary>
-            Enum type name.
+             Enum type name.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Enum.EnumvalueFieldNumber">
@@ -6498,7 +6479,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Enum.Enumvalue">
             <summary>
-            Enum value definitions.
+             Enum value definitions.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Enum.OptionsFieldNumber">
@@ -6506,7 +6487,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Enum.Options">
             <summary>
-            Protocol buffer options.
+             Protocol buffer options.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Enum.SourceContextFieldNumber">
@@ -6514,7 +6495,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Enum.SourceContext">
             <summary>
-            The source context.
+             The source context.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Enum.SyntaxFieldNumber">
@@ -6522,12 +6503,12 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Enum.Syntax">
             <summary>
-            The source syntax.
+             The source syntax.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.EnumValue">
             <summary>
-            Enum value definition.
+             Enum value definition.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.EnumValue.NameFieldNumber">
@@ -6535,7 +6516,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.EnumValue.Name">
             <summary>
-            Enum value name.
+             Enum value name.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.EnumValue.NumberFieldNumber">
@@ -6543,7 +6524,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.EnumValue.Number">
             <summary>
-            Enum value number.
+             Enum value number.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.EnumValue.OptionsFieldNumber">
@@ -6551,13 +6532,13 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.EnumValue.Options">
             <summary>
-            Protocol buffer options.
+             Protocol buffer options.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Option">
             <summary>
-            A protocol buffer option, which can be attached to a message, field,
-            enumeration, etc.
+             A protocol buffer option, which can be attached to a message, field,
+             enumeration, etc.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Option.NameFieldNumber">
@@ -6565,10 +6546,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Option.Name">
             <summary>
-            The option's name. For protobuf built-in options (options defined in
-            descriptor.proto), this is the short name. For example, `"map_entry"`.
-            For custom options, it should be the fully-qualified name. For example,
-            `"google.api.http"`.
+             The option's name. For example, `"java_package"`.
             </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Option.ValueFieldNumber">
@@ -6576,10 +6554,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Option.Value">
             <summary>
-            The option's value packed in an Any message. If the value is a primitive,
-            the corresponding wrapper type defined in google/protobuf/wrappers.proto
-            should be used. If the value is an enum, it should be stored as an int32
-            value using the google.protobuf.Int32Value type.
+             The option's value. For example, `"com.google.protobuf"`.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.WrappersReflection">
@@ -6595,9 +6570,9 @@
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.DoubleValue">
              <summary>
-             Wrapper message for `double`.
+              Wrapper message for `double`.
             
-             The JSON representation for `DoubleValue` is JSON number.
+              The JSON representation for `DoubleValue` is JSON number.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.DoubleValue.ValueFieldNumber">
@@ -6605,14 +6580,14 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.DoubleValue.Value">
             <summary>
-            The double value.
+             The double value.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.FloatValue">
              <summary>
-             Wrapper message for `float`.
+              Wrapper message for `float`.
             
-             The JSON representation for `FloatValue` is JSON number.
+              The JSON representation for `FloatValue` is JSON number.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.FloatValue.ValueFieldNumber">
@@ -6620,14 +6595,14 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.FloatValue.Value">
             <summary>
-            The float value.
+             The float value.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Int64Value">
              <summary>
-             Wrapper message for `int64`.
+              Wrapper message for `int64`.
             
-             The JSON representation for `Int64Value` is JSON string.
+              The JSON representation for `Int64Value` is JSON string.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Int64Value.ValueFieldNumber">
@@ -6635,14 +6610,14 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Int64Value.Value">
             <summary>
-            The int64 value.
+             The int64 value.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.UInt64Value">
              <summary>
-             Wrapper message for `uint64`.
+              Wrapper message for `uint64`.
             
-             The JSON representation for `UInt64Value` is JSON string.
+              The JSON representation for `UInt64Value` is JSON string.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.UInt64Value.ValueFieldNumber">
@@ -6650,14 +6625,14 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.UInt64Value.Value">
             <summary>
-            The uint64 value.
+             The uint64 value.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.Int32Value">
              <summary>
-             Wrapper message for `int32`.
+              Wrapper message for `int32`.
             
-             The JSON representation for `Int32Value` is JSON number.
+              The JSON representation for `Int32Value` is JSON number.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.Int32Value.ValueFieldNumber">
@@ -6665,14 +6640,14 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.Int32Value.Value">
             <summary>
-            The int32 value.
+             The int32 value.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.UInt32Value">
              <summary>
-             Wrapper message for `uint32`.
+              Wrapper message for `uint32`.
             
-             The JSON representation for `UInt32Value` is JSON number.
+              The JSON representation for `UInt32Value` is JSON number.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.UInt32Value.ValueFieldNumber">
@@ -6680,14 +6655,14 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.UInt32Value.Value">
             <summary>
-            The uint32 value.
+             The uint32 value.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.BoolValue">
              <summary>
-             Wrapper message for `bool`.
+              Wrapper message for `bool`.
             
-             The JSON representation for `BoolValue` is JSON `true` and `false`.
+              The JSON representation for `BoolValue` is JSON `true` and `false`.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.BoolValue.ValueFieldNumber">
@@ -6695,14 +6670,14 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.BoolValue.Value">
             <summary>
-            The bool value.
+             The bool value.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.StringValue">
              <summary>
-             Wrapper message for `string`.
+              Wrapper message for `string`.
             
-             The JSON representation for `StringValue` is JSON string.
+              The JSON representation for `StringValue` is JSON string.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.StringValue.ValueFieldNumber">
@@ -6710,14 +6685,14 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.StringValue.Value">
             <summary>
-            The string value.
+             The string value.
             </summary>
         </member>
         <member name="T:Google.Protobuf.WellKnownTypes.BytesValue">
              <summary>
-             Wrapper message for `bytes`.
+              Wrapper message for `bytes`.
             
-             The JSON representation for `BytesValue` is JSON string.
+              The JSON representation for `BytesValue` is JSON string.
              </summary>
         </member>
         <member name="F:Google.Protobuf.WellKnownTypes.BytesValue.ValueFieldNumber">
@@ -6725,7 +6700,7 @@
         </member>
         <member name="P:Google.Protobuf.WellKnownTypes.BytesValue.Value">
             <summary>
-            The bytes value.
+             The bytes value.
             </summary>
         </member>
     </members>
